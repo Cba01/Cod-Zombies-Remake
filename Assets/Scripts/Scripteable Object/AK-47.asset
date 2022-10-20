@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6423aa02388b69547844583c1bb4e941, type: 3}
+  m_Name: AK-47
+  m_EditorClassIdentifier: 
+  name: Ak-47
+  model: {fileID: 7197190753931082144, guid: 2b25a269391896042944849efaeee89d, type: 3}
+  controller: {fileID: 0}
+  damage: 30
+  timeBetweenShooting: 0.1
+  spread: 0.01
+  range: 100
+  timeBetweenShots: 0
+  bulletsPerTap: 1
+  allowButtonHold: 1
+  bulletsLeft: 9
+  bulletsShot: 0
+  magazineSize: 30
+  magazineAmount: 10
+  reloadTime: 1
+  reloading: 0
+  shooting: 0
+  readyToShoot: 1

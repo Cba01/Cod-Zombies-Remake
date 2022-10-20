@@ -1,0 +1,90 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+
+public class WaveManager : MonoBehaviour
+{
+
+    public GameObject[] spawnPoints;
+    public GameObject zombiePrefab;
+    private GameObject roundText;
+
+    public float currentRound = 1;
+    public int zombiesInRound;
+    int spawnedZombies = 0;
+    public int remainingZombies;
+
+
+
+    void Start()
+    {
+        roundText = GameObject.FindGameObjectWithTag("RoundUI");
+
+        ZombiesInRound();
+        StartCoroutine(SpawnZombies());
+
+        roundText.GetComponent<TextMeshProUGUI>().text = "Round " + currentRound;
+    }
+
+    void Update()
+    {
+        if (remainingZombies <= 0)
+        {
+            StartCoroutine(ChangeRound());
+        }
+    }
+
+    IEnumerator ChangeRound()
+    {
+        spawnedZombies = 0;
+        currentRound++;
+
+        ZombiesInRound();
+
+        yield return new WaitForSeconds(0.6f);
+        //cambiar la UI del round
+        roundText.GetComponent<TextMeshProUGUI>().text = "Round " + currentRound;
+        StartCoroutine(SpawnZombies());
+
+    }
+    IEnumerator SpawnZombies()
+    {
+        yield return new WaitForSeconds(5);
+        if (spawnedZombies < zombiesInRound)
+        {
+            int chosenSpawn = Random.Range(0, spawnPoints.Length);
+            GameObject zombie = Instantiate(zombiePrefab, spawnPoints[chosenSpawn].transform.position, Quaternion.identity);
+            zombie.GetComponent<Zombie>().health = ZombieHealth();
+            spawnedZombies++;
+        }
+        float substractTime = (currentRound / 100) * 25;
+        yield return new WaitForSeconds(Random.Range(5 - substractTime, 10));
+
+        if (spawnedZombies < zombiesInRound)
+        {
+            StartCoroutine(SpawnZombies());
+        }
+    }
+    float ZombieHealth()
+    {
+        float health;
+        if (currentRound > 9)
+        {
+            health = 950 * Mathf.Pow(1.1f, (currentRound - 9));
+            return health;
+        }
+        else
+        {
+            health = 100 * currentRound;
+            return health;
+        }
+    }
+
+    void ZombiesInRound()
+    {
+        zombiesInRound = Mathf.RoundToInt(currentRound * 3f);
+        remainingZombies = zombiesInRound;
+    }
+}
