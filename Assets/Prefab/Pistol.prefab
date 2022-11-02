@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 2548940604357216320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2542441859829382572}
@@ -438,7 +438,7 @@ Transform:
   m_GameObject: {fileID: 8416430558019519949}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8416430559433429442}
@@ -465,11 +465,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   anim: {fileID: 0}
-  muzzleFlash: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
-  camShakeMagnitude: 1
-  camShakeRoughness: 1
-  camShakeFadeInTime: 1
-  camShakeFadeOutTime: 1
+  overrideAnim: {fileID: 22100000, guid: f96d78bf498c5d647a4d5250b96199c9, type: 2}
   bulletHoleGround: {fileID: 1000010191825552, guid: 83e55d3418297934fab882559d009285, type: 3}
   bulletHoleEnemy: {fileID: 1000010191825552, guid: 83e55d3418297934fab882559d009285, type: 3}
   text: {fileID: 0}
@@ -496,8 +492,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8416430559433429443}
-  m_LocalRotation: {x: 0.04753652, y: 0.04321175, z: 0.016999464, w: -0.9977896}
-  m_LocalPosition: {x: 0.129, y: -0.318, z: 0.274}
+  m_LocalRotation: {x: 0.44308767, y: 0.37177515, z: 0.42967233, w: 0.69342494}
+  m_LocalPosition: {x: 0.1206, y: -0.051, z: 0.0866}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -505,4 +501,4 @@ Transform:
   - {fileID: 8228098689321583911}
   m_Father: {fileID: 8416430558019519948}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -5.528, y: -364.877, z: -1.717}
+  m_LocalEulerAnglesHint: {x: 17.158, y: 69.737, z: 75.57}

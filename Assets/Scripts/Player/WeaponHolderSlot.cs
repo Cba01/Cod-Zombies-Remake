@@ -10,6 +10,8 @@ public class WeaponHolderSlot : MonoBehaviour
 
         public GameObject currentWeaponModel;
 
+        private HandleAnimations handleAnimations;
+
         public void UnLoadWeapon()
         {
             if (currentWeaponModel != null)
@@ -51,7 +53,7 @@ public class WeaponHolderSlot : MonoBehaviour
                 //Posicion y rotacion del model en relacion a la posicion y rotacion del padre
                 model.transform.localPosition = Vector3.zero;
                 model.transform.localRotation = Quaternion.identity;
-                //model.transform.localScale = Vector3.one;
+                model.transform.localScale = Vector3.one;
             }
 
             currentWeaponModel = model;

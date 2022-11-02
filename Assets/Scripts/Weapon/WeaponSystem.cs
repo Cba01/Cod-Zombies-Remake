@@ -24,6 +24,9 @@ public class WeaponSystem : MonoBehaviour
 
     [SerializeField]
     private Animator anim;
+    [SerializeField]
+    private AnimatorOverrideController overrideAnim;
+    private HandleAnimations handleAnimations;
 
 
     [Header("Bullet Hole Graphics")]
@@ -43,23 +46,25 @@ public class WeaponSystem : MonoBehaviour
         playerUI = FindObjectOfType<PlayerUI>();
         gunData.bulletsLeft = gunData.magazineSize;
         gunData.readyToShoot = true;
-        gunData.magazineAmount = 10;
+        gunData.ammoNeeded = 0;
+        gunData.ammo = gunData.initialAmmo;
         inputHandler = FindObjectOfType<InputHandler>();
         playerWeapon = FindObjectOfType<PlayerWeapon>();
         playerLocomotion = FindObjectOfType<PlayerLocomotion>();
-
+        handleAnimations = FindObjectOfType<HandleAnimations>();
+        handleAnimations.SetAnimationController(overrideAnim);
 
 
     }
     private void Start()
     {
-
     }
     private void Update()
     {
         Debug.DrawRay(playerLocomotion.cam.transform.position, playerLocomotion.cam.transform.forward * 100, Color.green);
         ShootInput();
-        playerUI.UpdateBullets(gunData.bulletsLeft, gunData.magazineSize, gunData.magazineAmount);
+        playerUI.UpdateBullets(gunData.bulletsLeft, gunData.ammo);
+
     }
     private void FixedUpdate()
     {
@@ -68,6 +73,10 @@ public class WeaponSystem : MonoBehaviour
     private void LateUpdate()
     {
 
+    }
+
+    private void OnEnable()
+    {
     }
 
     public void ShootInput()
@@ -83,7 +92,7 @@ public class WeaponSystem : MonoBehaviour
             gunData.shooting = inputHandler.shootOnce_Input;
         }
 
-        if (inputHandler.reload_Input && gunData.bulletsLeft < gunData.magazineSize && !gunData.reloading && gunData.magazineAmount > 0)
+        if (inputHandler.reload_Input && gunData.bulletsLeft < gunData.magazineSize && !gunData.reloading && gunData.ammo > 0)
         {
             Reload();
         }
@@ -165,11 +174,12 @@ public class WeaponSystem : MonoBehaviour
 
         CameraShaker.Instance.ShakeOnce(gunData.camShakeMagnitude, gunData.camShakeRoughness, gunData.camShakeFadeInTime, gunData.camShakeFadeOutTime);
 
-        /* anim.SetTrigger("Shooting");
-        anim.CrossFade("Shoot", 1f, -1, 0f); */
+        playerLocomotion.HandleShootAnimation();
+        /* anim.CrossFade("Shoot", 1f, -1, 0f); */
 
         gunData.bulletsLeft--;
         gunData.bulletsShot--;
+        gunData.ammoNeeded++;
 
 
         Invoke("ResetShot", gunData.timeBetweenShooting);
@@ -179,7 +189,7 @@ public class WeaponSystem : MonoBehaviour
             Invoke("Shoot", gunData.timeBetweenShots);
         }
 
-        
+
     }
 
 
@@ -199,7 +209,8 @@ public class WeaponSystem : MonoBehaviour
     {
         gunData.bulletsLeft = gunData.magazineSize;
         gunData.reloading = false;
-        gunData.magazineAmount--;
+        gunData.ammo -= gunData.ammoNeeded;
+        gunData.ammoNeeded = 0;
         ResetShot();
     }
 

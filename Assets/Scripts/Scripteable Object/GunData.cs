@@ -5,16 +5,20 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Gun", menuName = "Weapon/Gun")]
 public class GunData : ScriptableObject
 {
-    [Header("Info")]
+    /*     [Header("Info")]
+     */
     public new string name;
 
-    [Header("Model Prefab")]
+    /*     [Header("Model Prefab")]
+     */
     public GameObject model;
 
-    [Header("Animator Controller")]
+    /*     [Header("Animator Controller")]
+     */
     public AnimatorOverrideController controller;
 
-    [Header("Shooting")]
+    /*     [Header("Shooting")]
+     */
     public int damage;
     public float timeBetweenShooting;
     public float spread;
@@ -23,14 +27,19 @@ public class GunData : ScriptableObject
     public int bulletsPerTap;
     public bool allowButtonHold;
 
-    [Header("Reloading")]
+    /*     [Header("Reloading")]
+     */
+    public int initialAmmo;
+    public int ammo;
+    public int ammoNeeded;
     public int bulletsLeft;
     public int bulletsShot;
     public int magazineSize;
     public int magazineAmount;
     public float reloadTime;
 
-    [Header("Effects")]
+    /*     [Header("Effects")]
+     */
     public float camShakeMagnitude;
     public float camShakeRoughness;
     public float camShakeFadeInTime;
@@ -38,7 +47,8 @@ public class GunData : ScriptableObject
     public GameObject muzzleFlash;
 
 
-    [Header("Flags (NO MODIFY)")]
+    /*     [Header("Flags (NO MODIFY)")]
+     */
     public bool reloading;
     public bool shooting;
     public bool readyToShoot;

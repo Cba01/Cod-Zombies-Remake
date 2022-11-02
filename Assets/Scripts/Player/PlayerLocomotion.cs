@@ -30,15 +30,21 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField]
     private LayerMask mask;
 
+
+    [Header("Player Animation")]
+    private Animator anim;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
         inputHandler = GetComponent<InputHandler>();
         playerUI = GetComponent<PlayerUI>();
         playerStats = GetComponent<PlayerStats>();
+        anim = GetComponentInChildren<Animator>();
     }
-    private void Update() {
-
+    private void Update()
+    {
+        Debug.Log(inputHandler.moveAmount);
 
     }
 
@@ -135,4 +141,29 @@ public class PlayerLocomotion : MonoBehaviour
             }
         }
     }
+
+    public void HandleMovementAnimation()
+    {
+        if (inputHandler.moveAmount == 0)
+        {
+            anim.SetFloat("Speed", 0f);
+        }
+        else if (inputHandler.moveAmount > 0 && !inputHandler.sprint_Input)
+        {
+            anim.SetFloat("Speed", 0.5f, 0.2f, Time.deltaTime);
+
+        }
+        else if (inputHandler.moveAmount > 0 && inputHandler.sprint_Input)
+        {
+            anim.SetFloat("Speed", 1f, 0.2f, Time.deltaTime);
+
+        }
+    }
+
+    public void HandleShootAnimation()
+    {
+/*         anim.SetTrigger("Shoot");
+ */        anim.Play("Pistol_Shoot");
+    }
+
 }

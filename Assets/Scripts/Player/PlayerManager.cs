@@ -34,6 +34,7 @@ public class PlayerManager : MonoBehaviour
         playerLocomotion.HandleCrouch();
         playerLocomotion.HandleSprint();
         playerLocomotion.HandleInteract();
+        playerLocomotion.HandleMovementAnimation();
 
         //Weapon
         

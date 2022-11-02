@@ -28,10 +28,10 @@ public class PlayerUI : MonoBehaviour
     {
     }
 
-    public void UpdateBullets(int bulletsLeft, int magazineSize, int magazineAmount)
+    public void UpdateBullets(int bulletsLeft, int ammo)
     {
 
-        bulletText.SetText(bulletsLeft + "|" + magazineSize * magazineAmount);
+        bulletText.SetText(bulletsLeft + "|" + ammo);
     }
 
     public void UpdateText(string prompMessage)
