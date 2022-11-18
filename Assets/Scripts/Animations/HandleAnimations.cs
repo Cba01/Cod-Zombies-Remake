@@ -16,5 +16,14 @@ public class HandleAnimations : MonoBehaviour
     {
         animator.runtimeAnimatorController = animatorOverrideController;
     }
+    public void GunUpAnimation()
+    {
+        animator.Play("Pistol_Up");
+    }
+
+    public void PlayReloadAnimation()
+    {
+        animator.SetTrigger("Reload");
+    }
 
 }

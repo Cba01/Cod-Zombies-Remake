@@ -23,13 +23,13 @@ MonoBehaviour:
   bulletsPerTap: 1
   allowButtonHold: 1
   initialAmmo: 360
-  ammo: 360
-  ammoNeeded: 0
-  bulletsLeft: 30
+  ammo: -20
+  ammoNeeded: 30
+  bulletsLeft: 0
   bulletsShot: 0
   magazineSize: 30
   magazineAmount: 5
-  reloadTime: 1
+  reloadTime: 2.8
   camShakeMagnitude: 5
   camShakeRoughness: 1
   camShakeFadeInTime: 0.05

@@ -17,6 +17,7 @@ public class PlayerLocomotion : MonoBehaviour
     public float jumpHeight = 3f;
     public float crouchTimer;
     public bool lerpCrouch;
+    public bool canSprint;
 
     [Header("Camera Prefs")]
     public GameObject cam;
@@ -41,10 +42,17 @@ public class PlayerLocomotion : MonoBehaviour
         playerUI = GetComponent<PlayerUI>();
         playerStats = GetComponent<PlayerStats>();
         anim = GetComponentInChildren<Animator>();
+        canSprint = true;
     }
     private void Update()
     {
         Debug.Log(inputHandler.moveAmount);
+        if (anim.GetBool("GunUp"))
+        {
+            Debug.Log("Arma equipada");
+
+        }
+
 
     }
 
@@ -107,7 +115,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     public void HandleSprint()
     {
-        if (inputHandler.sprint_Input && playerStats.stamina > 0.1f)
+        if (inputHandler.sprint_Input && playerStats.stamina > 0.1f && canSprint)
         {
             speed = 8f;
             playerStats.staminaRegenTimer = 0f;
@@ -153,17 +161,33 @@ public class PlayerLocomotion : MonoBehaviour
             anim.SetFloat("Speed", 0.5f, 0.2f, Time.deltaTime);
 
         }
-        else if (inputHandler.moveAmount > 0 && inputHandler.sprint_Input)
+        else if (inputHandler.moveAmount > 0 && inputHandler.sprint_Input && playerStats.stamina > 0.1f && canSprint)
         {
             anim.SetFloat("Speed", 1f, 0.2f, Time.deltaTime);
+
+        }
+        else if (playerStats.stamina < 0.1f)
+        {
+            anim.SetFloat("Speed", 0.5f, 0.2f, Time.deltaTime);
 
         }
     }
 
     public void HandleShootAnimation()
     {
-/*         anim.SetTrigger("Shoot");
- */        anim.Play("Pistol_Shoot");
+        anim.Play("Pistol_Shoot");
     }
 
+    public void HandleAimAnimation()
+    {
+        if (inputHandler.aim_Input)
+        {
+            anim.SetBool("Aim", true);
+        }
+        else if (!inputHandler.aim_Input)
+        {
+            anim.SetBool("Aim", false);
+
+        }
+    }
 }

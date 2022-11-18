@@ -4,58 +4,64 @@ using UnityEngine;
 
 public class WeaponHolderSlot : MonoBehaviour
 {
-     public Transform parentOverride;
-        public bool isLeftHandSlot;
-        public bool isRightHandSlot;
+    private Animator anim;
+    private void Awake()
+    {
+        anim = GetComponentInParent<Animator>();
+    }
 
-        public GameObject currentWeaponModel;
+    public Transform parentOverride;
+    public bool isLeftHandSlot;
+    public bool isRightHandSlot;
 
-        private HandleAnimations handleAnimations;
+    public GameObject currentWeaponModel;
 
-        public void UnLoadWeapon()
+    private HandleAnimations handleAnimations;
+
+    public void UnLoadWeapon()
+    {
+        if (currentWeaponModel != null)
         {
-            if (currentWeaponModel != null)
-            {
-                currentWeaponModel.SetActive(false);
-            }
+            currentWeaponModel.SetActive(false);
+        }
+    }
+
+
+    public void UnLoadWeaponAndDestroy()
+    {
+        if (currentWeaponModel != null)
+        {
+            Destroy(currentWeaponModel);
+        }
+    }
+
+    public void LoadWeaponModel(GameObject weaponItem)
+    {
+
+        UnLoadWeaponAndDestroy();
+        if (weaponItem == null)
+        {
+            UnLoadWeapon();
+            return;
         }
 
-
-        public void UnLoadWeaponAndDestroy()
+        GameObject model = Instantiate(weaponItem) as GameObject;
+        if (model != null)
         {
-            if (currentWeaponModel != null)
+            if (parentOverride != null)
             {
-                Destroy(currentWeaponModel);
+                model.transform.parent = parentOverride;
             }
+            else
+            {
+                model.transform.parent = transform;
+            }
+            //Posicion y rotacion del model en relacion a la posicion y rotacion del padre
+            model.transform.localPosition = Vector3.zero;
+            model.transform.localRotation = Quaternion.identity;
+            model.transform.localScale = Vector3.one;
         }
 
-        public void LoadWeaponModel(GameObject weaponItem)
-        {
-
-            UnLoadWeaponAndDestroy();
-            if (weaponItem == null)
-            {
-                UnLoadWeapon();
-                return;
-            }
-
-            GameObject model = Instantiate(weaponItem) as GameObject;
-            if (model != null)
-            {
-                if (parentOverride != null)
-                {
-                    model.transform.parent = parentOverride;
-                }
-                else
-                {
-                    model.transform.parent = transform;
-                }
-                //Posicion y rotacion del model en relacion a la posicion y rotacion del padre
-                model.transform.localPosition = Vector3.zero;
-                model.transform.localRotation = Quaternion.identity;
-                model.transform.localScale = Vector3.one;
-            }
-
-            currentWeaponModel = model;
-        }
+        currentWeaponModel = model;
+    }
 }

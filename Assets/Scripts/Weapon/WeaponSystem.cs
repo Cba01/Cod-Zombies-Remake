@@ -58,6 +58,8 @@ public class WeaponSystem : MonoBehaviour
     }
     private void Start()
     {
+
+        handleAnimations.GunUpAnimation();
     }
     private void Update()
     {
@@ -102,8 +104,13 @@ public class WeaponSystem : MonoBehaviour
         if (gunData.readyToShoot && gunData.shooting && !gunData.reloading && gunData.bulletsLeft > 0)
         {
             gunData.bulletsShot = gunData.bulletsPerTap;
+
             Shoot();
 
+
+        }
+        else
+        {
 
         }
     }
@@ -112,6 +119,7 @@ public class WeaponSystem : MonoBehaviour
     {
 
         gunData.readyToShoot = false;
+        playerLocomotion.canSprint = false;
 
 
         //Spread
@@ -190,17 +198,23 @@ public class WeaponSystem : MonoBehaviour
         }
 
 
+
+
     }
 
 
     private void ResetShot()
     {
         gunData.readyToShoot = true;
+        playerLocomotion.canSprint = true;
+
     }
 
     private void Reload()
     {
         gunData.reloading = true;
+        playerLocomotion.canSprint = false;
+        handleAnimations.PlayReloadAnimation();
         Invoke("ReloadFinished", gunData.reloadTime);
 
 
@@ -211,6 +225,7 @@ public class WeaponSystem : MonoBehaviour
         gunData.reloading = false;
         gunData.ammo -= gunData.ammoNeeded;
         gunData.ammoNeeded = 0;
+        playerLocomotion.canSprint = true;
         ResetShot();
     }
 

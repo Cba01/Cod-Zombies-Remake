@@ -24,12 +24,12 @@ MonoBehaviour:
   allowButtonHold: 0
   initialAmmo: 360
   ammo: 360
-  ammoNeeded: 0
-  bulletsLeft: 30
+  ammoNeeded: 5
+  bulletsLeft: 25
   bulletsShot: 0
   magazineSize: 30
   magazineAmount: 10
-  reloadTime: 1
+  reloadTime: 1.8
   camShakeMagnitude: 5
   camShakeRoughness: 1
   camShakeFadeInTime: 0.05
