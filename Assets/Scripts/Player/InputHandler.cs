@@ -33,6 +33,7 @@ public class InputHandler : MonoBehaviour
     public bool reload_Input;
 
     public bool changingWeapon_Input;
+    public float changingWeapon_Value;
     public int inventoryIndex = 0;
     public float changeTime;
     public float switchTime = 1f;
@@ -56,7 +57,8 @@ public class InputHandler : MonoBehaviour
     private void Update()
     {
         changeTime += Time.deltaTime;
-        Debug.Log(changingWeapon_Input);
+        Debug.Log("CHANGE WEAPON INPUT "+ weapon.ChangeWeapon.ReadValue<float>());
+
     }
 
     public void TickInput()
@@ -119,7 +121,8 @@ public class InputHandler : MonoBehaviour
     private void ChangeWeaponInput()
     {
             weapon.ChangeWeapon.performed += i => changingWeapon_Input = true;
-            float scrollValue = weapon.ChangeWeapon.ReadValue<float>();
+            changingWeapon_Value = weapon.ChangeWeapon.ReadValue<float>();
+            /* float scrollValue = weapon.ChangeWeapon.ReadValue<float>();
             if (scrollValue > 0)
             {
                 if (inventoryIndex == 1)
@@ -141,7 +144,7 @@ public class InputHandler : MonoBehaviour
                 {
                     inventoryIndex = 0;
                 }
-            }
+            } */
     }
 
 

@@ -59,7 +59,6 @@ public class WeaponSystem : MonoBehaviour
     private void Start()
     {
 
-        handleAnimations.GunUpAnimation();
     }
     private void Update()
     {
@@ -79,6 +78,9 @@ public class WeaponSystem : MonoBehaviour
 
     private void OnEnable()
     {
+        handleAnimations.GunUpAnimation();
+        handleAnimations.SetAnimationController(overrideAnim);
+
     }
 
     public void ShootInput()

@@ -46,13 +46,6 @@ public class PlayerLocomotion : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(inputHandler.moveAmount);
-        if (anim.GetBool("GunUp"))
-        {
-            Debug.Log("Arma equipada");
-
-        }
-
 
     }
 

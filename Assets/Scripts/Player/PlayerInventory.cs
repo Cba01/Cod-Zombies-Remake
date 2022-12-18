@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     private InputHandler inputHandler;
-    private GameObject currentGun;
 
-    public GameObject[] inventorySlots = new GameObject[1];
-    public List<GameObject> inventorySlotss;
+    [SerializeField]
+    private int currentWeaponIndex = 0;
+
+    public GameObject[] weaponSlots;
 
     void Start()
     {
@@ -16,18 +17,50 @@ public class PlayerInventory : MonoBehaviour
     }
     private void Update()
     {
-        if (inputHandler.changingWeapon_Input)
+        if (inputHandler.changingWeapon_Value != 0)
         {
-            
+            SwitchWeapon();
         }
     }
 
-    public void ChangeWeapon()
+    public void SwitchWeapon()
     {
-        currentGun = inventorySlots[inputHandler.inventoryIndex];
+
+        if (inputHandler.changingWeapon_Value > 0.1f)
+        {
+            foreach (GameObject weapon in weaponSlots)
+            {
+                weapon.SetActive(false);
+            }
+
+            currentWeaponIndex++;
+
+            if (currentWeaponIndex >= weaponSlots.Length)
+            {
+                currentWeaponIndex = 0;
+            }
+
+            weaponSlots[currentWeaponIndex].SetActive(true);
+        }
+        else if(inputHandler.changingWeapon_Value < -0.1f)
+        {
+            foreach (GameObject weapon in weaponSlots)
+            {
+                weapon.SetActive(false);
+            }
+
+            currentWeaponIndex--;
+
+            if (currentWeaponIndex < 0)
+            {
+                currentWeaponIndex = weaponSlots.Length - 1;
+            }
+
+            weaponSlots[currentWeaponIndex].SetActive(true);
+        }
+
+
+
     }
-    public void LoadGun(int index, GameObject gun)
-    {
-        inventorySlots[index] = gun;
-    }
+
 }

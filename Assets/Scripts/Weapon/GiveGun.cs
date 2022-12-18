@@ -24,7 +24,6 @@ public class GiveGun : Interactable
     protected override void Interact()
     {
         weaponHolderSlot.LoadWeaponModel(gun);
-        playerInventory.LoadGun(0, gun);
 
     }
 }
