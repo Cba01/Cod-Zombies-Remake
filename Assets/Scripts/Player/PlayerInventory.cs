@@ -6,10 +6,11 @@ public class PlayerInventory : MonoBehaviour
 {
     private InputHandler inputHandler;
 
-    [SerializeField]
-    private int currentWeaponIndex = 0;
+    public int currentWeaponIndex = 0;
 
     public GameObject[] weaponSlots;
+
+    public Transform[] parentOverride;
 
     void Start()
     {
@@ -28,27 +29,31 @@ public class PlayerInventory : MonoBehaviour
 
         if (inputHandler.changingWeapon_Value > 0.1f)
         {
-            foreach (GameObject weapon in weaponSlots)
-            {
-                weapon.SetActive(false);
-            }
-
+            // Aumenta el indice del arma equipada
             currentWeaponIndex++;
 
+            // Cambia resetea el indice si se pasa del tamaño del inventario
             if (currentWeaponIndex >= weaponSlots.Length)
             {
                 currentWeaponIndex = 0;
             }
 
-            weaponSlots[currentWeaponIndex].SetActive(true);
-        }
-        else if(inputHandler.changingWeapon_Value < -0.1f)
-        {
-            foreach (GameObject weapon in weaponSlots)
+            /* if (parentOverride[currentWeaponIndex].childCount > 0)
+
+                return;
+ */
+            // Desactiva todos las armas
+            for (int i = 0; i < parentOverride.Length; i++)
             {
-                weapon.SetActive(false);
+                parentOverride[i].GetChild(0).gameObject.SetActive(false);
             }
 
+            // Activa el arma dependiendo del indice actual
+            parentOverride[currentWeaponIndex].GetChild(0).gameObject.SetActive(true);
+
+        }
+        else if (inputHandler.changingWeapon_Value < -0.1f)
+        {
             currentWeaponIndex--;
 
             if (currentWeaponIndex < 0)
@@ -56,11 +61,22 @@ public class PlayerInventory : MonoBehaviour
                 currentWeaponIndex = weaponSlots.Length - 1;
             }
 
-            weaponSlots[currentWeaponIndex].SetActive(true);
+            /* if (parentOverride[currentWeaponIndex].childCount > 0)
+
+                return; */
+
+            for (int i = 0; i < parentOverride.Length; i++)
+            {
+                parentOverride[i].GetChild(0).gameObject.SetActive(false);
+            }
+
+            parentOverride[currentWeaponIndex].GetChild(0).gameObject.SetActive(true);
         }
 
 
 
     }
+
+
 
 }

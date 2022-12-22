@@ -17,7 +17,6 @@ public class MysteryBox : Interactable
 
     public GameObject[] guns;
     public GameObject[] gunsPrefab;
-    public int selectedGun;
     public Transform cubePosition;
 
     [SerializeField]
@@ -25,6 +24,10 @@ public class MysteryBox : Interactable
     int counter, counterCompare;
 
     [SerializeField]
+    private int lastSelectedGun;
+    public int selectedGun;
+
+
     public bool weaponSelected = false;
 
 
@@ -64,6 +67,7 @@ public class MysteryBox : Interactable
             }
             else
             {
+                weaponSelected = false;
                 counter = 0;
                 counterCompare = 0;
                 timer = 0;
@@ -82,6 +86,7 @@ public class MysteryBox : Interactable
 
         if (weaponSelected)
         {
+            lastSelectedGun = selectedGun;
             mysteryBoxOpen = false;
             weaponHolderSlot.LoadWeaponModel(gunsPrefab[selectedGun]);
             weaponSelected = false;

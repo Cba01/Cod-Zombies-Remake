@@ -16,11 +16,7 @@ public class GiveGun : Interactable
         playerInventory = FindObjectOfType<PlayerInventory>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
     protected override void Interact()
     {
         weaponHolderSlot.LoadWeaponModel(gun);

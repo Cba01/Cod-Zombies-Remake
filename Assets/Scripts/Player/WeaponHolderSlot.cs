@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class WeaponHolderSlot : MonoBehaviour
 {
-    private Animator anim;
+    private PlayerInventory playerInventory;
+
+
     private void Awake()
     {
-        anim = GetComponentInParent<Animator>();
+        playerInventory = GetComponentInParent<PlayerInventory>();
     }
 
-    public Transform parentOverride;
-    public bool isLeftHandSlot;
-    public bool isRightHandSlot;
-
     public GameObject currentWeaponModel;
-
-    private HandleAnimations handleAnimations;
 
     public void UnLoadWeapon()
     {
@@ -25,8 +21,6 @@ public class WeaponHolderSlot : MonoBehaviour
             currentWeaponModel.SetActive(false);
         }
     }
-
-
     public void UnLoadWeaponAndDestroy()
     {
         if (currentWeaponModel != null)
@@ -35,22 +29,33 @@ public class WeaponHolderSlot : MonoBehaviour
         }
     }
 
+    public void DestroyWeaponIndex()
+    {
+        if (playerInventory.parentOverride[playerInventory.currentWeaponIndex].childCount > 0)
+        {
+            Destroy(playerInventory.parentOverride[playerInventory.currentWeaponIndex].GetChild(0).gameObject);
+        }
+    }
+
     public void LoadWeaponModel(GameObject weaponItem)
     {
+       
+        DestroyWeaponIndex();
 
-        UnLoadWeaponAndDestroy();
         if (weaponItem == null)
         {
             UnLoadWeapon();
             return;
         }
 
+        playerInventory.weaponSlots[playerInventory.currentWeaponIndex] = weaponItem;
+
         GameObject model = Instantiate(weaponItem) as GameObject;
         if (model != null)
         {
-            if (parentOverride != null)
+            if (playerInventory.parentOverride[playerInventory.currentWeaponIndex] != null)
             {
-                model.transform.parent = parentOverride;
+                model.transform.parent = playerInventory.parentOverride[playerInventory.currentWeaponIndex];
             }
             else
             {
