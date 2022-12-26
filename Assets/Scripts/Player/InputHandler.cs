@@ -52,12 +52,12 @@ public class InputHandler : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
-        playerInput = new PlayerInput();
     }
     private void Update()
     {
         changeTime += Time.deltaTime;
-        Debug.Log("CHANGE WEAPON INPUT "+ weapon.ChangeWeapon.ReadValue<float>());
+        Debug.Log("CAMARA Y "+onFoot.Look.ReadValue<Vector2>().x);
+        Debug.Log("CAMARA X "+onFoot.Look.ReadValue<Vector2>().y);
 
     }
 

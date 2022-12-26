@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    private float health;
+    public float health;
     public float stamina;
     public int balance;
     private float lerpTimer;

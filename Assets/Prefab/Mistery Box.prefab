@@ -3602,6 +3602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4416205039262168903}
   - component: {fileID: 2359934446262134641}
+  - component: {fileID: 1957184404}
   m_Layer: 3
   m_Name: Light
   m_TagString: Untagged
@@ -3686,6 +3687,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1957184404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256979894181120850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &5287102841152656584
 GameObject:
   m_ObjectHideFlags: 0
@@ -4557,9 +4578,16 @@ MonoBehaviour:
   - {fileID: 58523879818622605}
   - {fileID: 929565288217259721}
   - {fileID: 4449391785311767318}
-  selectedGun: 0
+  gunsPrefab:
+  - {fileID: 8896483721174935382, guid: 620b60dfc6912be459c0fa4d2461a7b6, type: 3}
+  - {fileID: 831501460829851695, guid: 38059a4d133ad9242848971ba8860dae, type: 3}
+  - {fileID: 7197190753931082144, guid: 2b25a269391896042944849efaeee89d, type: 3}
+  - {fileID: 4996922629365439123, guid: d74d0cd752c627e47bb32596caab63a3, type: 3}
   cubePosition: {fileID: 6076808603687491582}
   timer: 0
+  lastSelectedGun: 0
+  selectedGun: 0
+  weaponSelected: 0
 --- !u!1 &6607009782147141165
 GameObject:
   m_ObjectHideFlags: 0

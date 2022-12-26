@@ -58,7 +58,7 @@ public class PlayerLocomotion : MonoBehaviour
         playerVelocity.y += gravity * Time.deltaTime;
         if (inputHandler.isGrounded && playerVelocity.y < 0)
             playerVelocity.y = -2f;
-        controller.Move(playerVelocity * Time.deltaTime);
+        controller.Move(/* Vector3.Lerp() */ playerVelocity * Time.deltaTime);
     }
 
     public void HandleLook(Vector2 input)
