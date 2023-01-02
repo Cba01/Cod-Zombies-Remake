@@ -56,8 +56,6 @@ public class InputHandler : MonoBehaviour
     private void Update()
     {
         changeTime += Time.deltaTime;
-        Debug.Log("CAMARA Y "+onFoot.Look.ReadValue<Vector2>().x);
-        Debug.Log("CAMARA X "+onFoot.Look.ReadValue<Vector2>().y);
 
     }
 

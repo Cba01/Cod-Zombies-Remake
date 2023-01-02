@@ -52,13 +52,12 @@ public class WeaponSystem : MonoBehaviour
         playerWeapon = FindObjectOfType<PlayerWeapon>();
         playerLocomotion = FindObjectOfType<PlayerLocomotion>();
         handleAnimations = FindObjectOfType<HandleAnimations>();
-        handleAnimations.SetAnimationController(overrideAnim);
 
 
     }
     private void Start()
     {
-
+        handleAnimations.SetAnimationController(overrideAnim);
     }
     private void Update()
     {
