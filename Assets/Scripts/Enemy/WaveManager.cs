@@ -11,6 +11,8 @@ public class WaveManager : MonoBehaviour
     public GameObject zombiePrefab;
     private GameObject roundText;
 
+    private UIAnim uIAnim;
+
     public float currentRound = 1;
     public int zombiesInRound;
     int spawnedZombies = 0;
@@ -20,12 +22,13 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
+        uIAnim = FindObjectOfType<UIAnim>();
         roundText = GameObject.FindGameObjectWithTag("RoundUI");
 
         ZombiesInRound();
         StartCoroutine(SpawnZombies());
 
-        roundText.GetComponent<TextMeshProUGUI>().text = "Round " + currentRound;
+        roundText.GetComponent<TextMeshProUGUI>().text = "" + currentRound;
     }
 
     void Update()
@@ -45,7 +48,8 @@ public class WaveManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.6f);
         //cambiar la UI del round
-        roundText.GetComponent<TextMeshProUGUI>().text = "Round " + currentRound;
+        uIAnim.ChangeRoundAnimation();
+        roundText.GetComponent<TextMeshProUGUI>().text = "" + currentRound;
         StartCoroutine(SpawnZombies());
 
     }

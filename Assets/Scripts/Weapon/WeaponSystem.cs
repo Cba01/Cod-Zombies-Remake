@@ -44,10 +44,7 @@ public class WeaponSystem : MonoBehaviour
         GameObject camera = GameObject.FindGameObjectWithTag("MainCamera");
         fpsCam = camera.GetComponent<Camera>();
         playerUI = FindObjectOfType<PlayerUI>();
-        gunData.bulletsLeft = gunData.magazineSize;
-        gunData.readyToShoot = true;
-        gunData.ammoNeeded = 0;
-        gunData.ammo = gunData.initialAmmo;
+        StartConfig();
         inputHandler = FindObjectOfType<InputHandler>();
         playerWeapon = FindObjectOfType<PlayerWeapon>();
         playerLocomotion = FindObjectOfType<PlayerLocomotion>();
@@ -86,14 +83,7 @@ public class WeaponSystem : MonoBehaviour
     {
         Debug.DrawRay(fpsCam.transform.position, fpsCam.transform.forward * 100, Color.blue);
 
-        if (gunData.allowButtonHold)
-        {
-            gunData.shooting = inputHandler.shootHold_Input;
-        }
-        else
-        {
-            gunData.shooting = inputHandler.shootOnce_Input;
-        }
+        ShootingHoldInput();
 
         if (inputHandler.reload_Input && gunData.bulletsLeft < gunData.magazineSize && !gunData.reloading && gunData.ammo > 0)
         {
@@ -105,14 +95,7 @@ public class WeaponSystem : MonoBehaviour
         if (gunData.readyToShoot && gunData.shooting && !gunData.reloading && gunData.bulletsLeft > 0)
         {
             gunData.bulletsShot = gunData.bulletsPerTap;
-
             Shoot();
-
-
-        }
-        else
-        {
-
         }
     }
 
@@ -178,7 +161,7 @@ public class WeaponSystem : MonoBehaviour
             Instantiate(bulletHoleGround, rayHit.point, Quaternion.LookRotation(rayHit.normal));
         }
 
-        GameObject muzzleFlashGO = (GameObject)Instantiate(gunData.muzzleFlash, attackPoint.position, Quaternion.identity);
+        GameObject muzzleFlashGO = (GameObject)Instantiate(gunData.muzzleFlash, attackPoint.position, transform.rotation);
         muzzleFlashGO.transform.parent = attackPoint;
 
         CameraShaker.Instance.ShakeOnce(gunData.camShakeMagnitude, gunData.camShakeRoughness, gunData.camShakeFadeInTime, gunData.camShakeFadeOutTime);
@@ -222,12 +205,42 @@ public class WeaponSystem : MonoBehaviour
     }
     private void ReloadFinished()
     {
-        gunData.bulletsLeft = gunData.magazineSize;
+        if (gunData.ammoNeeded > gunData.ammo)
+        {
+            gunData.bulletsLeft += gunData.ammo;
+            gunData.ammo = 0;
+        }
+        else
+        {
+            gunData.bulletsLeft = gunData.magazineSize;
+            gunData.ammo -= gunData.ammoNeeded;
+
+        }
         gunData.reloading = false;
-        gunData.ammo -= gunData.ammoNeeded;
         gunData.ammoNeeded = 0;
         playerLocomotion.canSprint = true;
         ResetShot();
+    }
+
+    private void StartConfig()
+    {
+        gunData.bulletsLeft = gunData.magazineSize;
+        gunData.readyToShoot = true;
+        gunData.reloading = false;
+        gunData.ammoNeeded = 0;
+        gunData.ammo = gunData.initialAmmo;
+    }
+
+    private void ShootingHoldInput()
+    {
+        if (gunData.allowButtonHold)
+        {
+            gunData.shooting = inputHandler.shootHold_Input;
+        }
+        else
+        {
+            gunData.shooting = inputHandler.shootOnce_Input;
+        }
     }
 
 }

@@ -22,10 +22,10 @@ MonoBehaviour:
   timeBetweenShots: 0
   bulletsPerTap: 1
   allowButtonHold: 1
-  initialAmmo: 360
-  ammo: -20
-  ammoNeeded: 30
-  bulletsLeft: 0
+  initialAmmo: 50
+  ammo: 0
+  ammoNeeded: 0
+  bulletsLeft: 20
   bulletsShot: 0
   magazineSize: 30
   magazineAmount: 5

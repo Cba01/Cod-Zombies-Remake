@@ -56,6 +56,8 @@ public class InputHandler : MonoBehaviour
     private void Update()
     {
         changeTime += Time.deltaTime;
+        
+        Debug.Log(changingWeapon_Input);
 
     }
 
@@ -120,29 +122,8 @@ public class InputHandler : MonoBehaviour
     {
             weapon.ChangeWeapon.performed += i => changingWeapon_Input = true;
             changingWeapon_Value = weapon.ChangeWeapon.ReadValue<float>();
-            /* float scrollValue = weapon.ChangeWeapon.ReadValue<float>();
-            if (scrollValue > 0)
-            {
-                if (inventoryIndex == 1)
-                {
-                    inventoryIndex = 0;
-                }
-                else
-                {
-                    inventoryIndex = 1;
-                }
-            }
-            else if (scrollValue < 0)
-            {
-                if (inventoryIndex == 0)
-                {
-                    inventoryIndex = 1;
-                }
-                else
-                {
-                    inventoryIndex = 0;
-                }
-            } */
+            
+            
     }
 
 

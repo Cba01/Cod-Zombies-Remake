@@ -18,10 +18,11 @@ public class PlayerInventory : MonoBehaviour
     }
     private void Update()
     {
-        if (inputHandler.changingWeapon_Value != 0)
+        if (inputHandler.changingWeapon_Value != 0 || Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2))
         {
             SwitchWeapon();
         }
+
     }
 
     public void SwitchWeapon()
@@ -37,11 +38,6 @@ public class PlayerInventory : MonoBehaviour
             {
                 currentWeaponIndex = 0;
             }
-
-            /* if (parentOverride[currentWeaponIndex].childCount > 0)
-
-                return;
- */
             // Desactiva todos las armas
             for (int i = 0; i < parentOverride.Length; i++)
             {
@@ -61,10 +57,33 @@ public class PlayerInventory : MonoBehaviour
                 currentWeaponIndex = weaponSlots.Length - 1;
             }
 
-            /* if (parentOverride[currentWeaponIndex].childCount > 0)
 
-                return; */
+            for (int i = 0; i < parentOverride.Length; i++)
+            {
+                parentOverride[i].GetChild(0).gameObject.SetActive(false);
+            }
 
+            parentOverride[currentWeaponIndex].GetChild(0).gameObject.SetActive(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            //Si el indice ya está en el arma seleccionada entonces no hacer nada
+            if(currentWeaponIndex == 0)
+            return;
+            currentWeaponIndex = 0;
+            for (int i = 0; i < parentOverride.Length; i++)
+            {
+                parentOverride[i].GetChild(0).gameObject.SetActive(false);
+            }
+
+            parentOverride[currentWeaponIndex].GetChild(0).gameObject.SetActive(true);
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if(currentWeaponIndex == 1)
+            return;
+            currentWeaponIndex = 1;
             for (int i = 0; i < parentOverride.Length; i++)
             {
                 parentOverride[i].GetChild(0).gameObject.SetActive(false);
