@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class GivePerk : Interactable
 {
+    PlayerStats playerStats;
+
+    private void Awake()
+    {
+        playerStats = FindObjectOfType<PlayerStats>();
+    }
     protected override void Interact()
     {
 
@@ -11,16 +17,34 @@ public class GivePerk : Interactable
 
     public void Joggernog()
     {
-        Debug.Log("JOGGERNOG");
+        if (playerStats.joggernog == false)
+        {
+            playerStats.maxHealth *= 2;
+            playerStats.joggernog = true;
+        }
     }
 
     public void SpeedCola()
     {
-        Debug.Log("SpeedCola");
+        if (playerStats.speedCola == false)
+        {
+            playerStats.speedCola = true;
+
+        }
     }
     public void StaminUp()
     {
-        Debug.Log("StaminUp");
+        if (playerStats.staminUp == false)
+        {
+            playerStats.maxStamina *= 1.5f;
+            playerStats.walkSpeed *= 1.5f;
+            playerStats.sprintSpeed *= 1.5f;
+            playerStats.staminaRegenAmount *= 2;
+            playerStats.staminUp = true;
+        }
+
     }
+
+
 
 }

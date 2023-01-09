@@ -12,12 +12,12 @@ public class PlayerLocomotion : MonoBehaviour
 
 
     [Header("Player Config")]
-    public float speed = 5f;
     public float gravity = -9.8f;
     public float jumpHeight = 3f;
     public float crouchTimer;
     public bool lerpCrouch;
     public bool canSprint;
+    
 
     [Header("Camera Prefs")]
     public GameObject cam;
@@ -54,7 +54,7 @@ public class PlayerLocomotion : MonoBehaviour
         Vector3 moveDirection = Vector3.zero;
         moveDirection.x = input.x;
         moveDirection.z = input.y;
-        controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
+        controller.Move(transform.TransformDirection(moveDirection) * playerStats.speed * Time.deltaTime);
         playerVelocity.y += gravity * Time.deltaTime;
         if (inputHandler.isGrounded && playerVelocity.y < 0)
             playerVelocity.y = -2f;
@@ -110,13 +110,12 @@ public class PlayerLocomotion : MonoBehaviour
     {
         if (inputHandler.sprint_Input && playerStats.stamina > 0.1f && canSprint)
         {
-            speed = 8f;
-            playerStats.staminaRegenTimer = 0f;
+            playerStats.speed = playerStats.sprintSpeed;
             playerStats.DrainStamina();
         }
         else
         {
-            speed = 5f;
+            playerStats.speed = playerStats.walkSpeed;
             playerStats.RegenStamina();
         }
     }

@@ -5,28 +5,43 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
+
+    [Header("Stats")]
     public float health;
     public float stamina;
     public int balance;
+    public float speed;
     private float lerpTimer;
     [Header("Player Health")]
     public float maxHealth = 100f;
     public float chipSpeed = 10f;
     public Image frontHealthBar;
     public Image backHealthBar;
+    private float healthRegenTimer;
+    public float healthRegenAmount;
 
     [Header("Player Stamina")]
     public float maxStamina = 100f;
     public float staminaDrainPerFrame = 10.0f;
     public Image staminaBar;
-    public float staminaRegenTimer;
+    private float staminaRegenTimer;
     public float staminaRegenAmount;
+    public float walkSpeed;
+    public float sprintSpeed;
+
+
+    [Header("Perks")]
+    public bool joggernog;
+    public bool speedCola;
+    public bool staminUp;
 
 
     void Start()
     {
         health = maxHealth;
         stamina = maxStamina;
+        /* walkSpeed = 5f;
+        sprintSpeed = 8f; */
     }
 
     void Update()
@@ -34,6 +49,7 @@ public class PlayerStats : MonoBehaviour
         health = Mathf.Clamp(health, 0, maxHealth);
         stamina = Mathf.Clamp(stamina, 0, maxStamina);
 
+        RegenHealth();
         UpdateHealthUI();
         UpdateStaminaUI();
 
@@ -65,6 +81,7 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        healthRegenTimer = 0f;
         health -= damage;
         lerpTimer = 0f;
     }
@@ -86,6 +103,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void DrainStamina()
     {
+        staminaRegenTimer = 0f;
         if (stamina <= maxStamina)
         {
             stamina -= staminaDrainPerFrame * Time.deltaTime;
@@ -100,5 +118,14 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    
+    public void RegenHealth()
+    {
+        healthRegenTimer += Time.deltaTime;
+        if (health < maxHealth && healthRegenTimer > 2f)
+        {
+            health += healthRegenAmount * Time.deltaTime;
+        }
+    }
+
+
 }
