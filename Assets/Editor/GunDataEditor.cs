@@ -31,6 +31,7 @@ public class GunDataEditor : Editor
     private SerializedProperty magazineSize;
     private SerializedProperty magazineAmount;
     private SerializedProperty reloadTime;
+    private SerializedProperty starterReloadTime;
 
     private SerializedProperty camShakeMagnitude;
     private SerializedProperty camShakeRoughness;
@@ -71,6 +72,7 @@ public class GunDataEditor : Editor
         magazineSize = soTarget.FindProperty("magazineSize");
         magazineAmount = soTarget.FindProperty("magazineAmount");
         reloadTime = soTarget.FindProperty("reloadTime");
+        starterReloadTime = soTarget.FindProperty("starterReloadTime");
 
         camShakeMagnitude = soTarget.FindProperty("camShakeMagnitude");
         camShakeRoughness = soTarget.FindProperty("camShakeRoughness");
@@ -183,6 +185,8 @@ public class GunDataEditor : Editor
 
         GUILayout.Label("Reload", EditorStyles.boldLabel);
         EditorGUILayout.PropertyField(reloadTime);
+        EditorGUILayout.Space(1);
+        EditorGUILayout.PropertyField(starterReloadTime);
 
 
         /*  GunData gunData = (GunData)target;

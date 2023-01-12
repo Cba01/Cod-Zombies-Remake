@@ -24,6 +24,12 @@ public class HandleAnimations : MonoBehaviour
     public void PlayReloadAnimation()
     {
         animator.SetTrigger("Reload");
+
+    }
+
+    public void PlayFastReloadAnimation()
+    {
+        animator.Play("Pistol_ReloadFast");
     }
 
 }

@@ -22,11 +22,20 @@ MonoBehaviour:
   timeBetweenShots: 0
   bulletsPerTap: 6
   allowButtonHold: 0
+  initialAmmo: 0
+  ammo: 0
+  ammoNeeded: 0
   bulletsLeft: 30
   bulletsShot: 0
   magazineSize: 36
   magazineAmount: 10
   reloadTime: 1
+  starterReloadTime: 1
+  camShakeMagnitude: 0
+  camShakeRoughness: 0
+  camShakeFadeInTime: 0
+  camShakeFadeOutTime: 0
+  muzzleFlash: {fileID: 0}
   reloading: 0
   shooting: 0
   readyToShoot: 1

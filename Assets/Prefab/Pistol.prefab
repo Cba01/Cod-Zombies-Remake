@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2542822174740457328}
   - component: {fileID: 2535410578479806510}
   - component: {fileID: 2525234309973864850}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2546608605474880888}
   - component: {fileID: 7366417998594647732}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Soviet Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 2546673936312207754}
   - component: {fileID: 2531505321516055014}
   - component: {fileID: 2525344900212684936}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 2542441859829382572}
   - component: {fileID: 2531514859528652094}
   - component: {fileID: 2525811193944398546}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 2546341148623147192}
   - component: {fileID: 2535438462021364990}
   - component: {fileID: 2525831497452313500}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8228098689321583911}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8416430558019519948}
   - component: {fileID: 1214318857812810120}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,8 +466,8 @@ MonoBehaviour:
     m_Bits: 0
   anim: {fileID: 0}
   overrideAnim: {fileID: 22100000, guid: f96d78bf498c5d647a4d5250b96199c9, type: 2}
-  bulletHoleGround: {fileID: 1000010191825552, guid: 83e55d3418297934fab882559d009285, type: 3}
-  bulletHoleEnemy: {fileID: 1000010191825552, guid: 83e55d3418297934fab882559d009285, type: 3}
+  bulletHoleGround: {fileID: 707084998190155162, guid: 571c4f714a78cf342b437723d31e0bf3, type: 3}
+  bulletHoleEnemy: {fileID: 707084998190155162, guid: 571c4f714a78cf342b437723d31e0bf3, type: 3}
   text: {fileID: 0}
 --- !u!1 &8416430559433429443
 GameObject:
@@ -478,7 +478,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8416430559433429442}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations.Rigging;
 using EZCameraShake;
+using UnityEngine.VFX;
 
 
 public class Zombie : MonoBehaviour
@@ -15,13 +16,22 @@ public class Zombie : MonoBehaviour
     MultiAimConstraint mac;
     PlayerStats playerStats;
     Rigidbody[] ragdollRigidbodies;
+    SkinnedMeshRenderer[] skinnedMesh;
+    Material[] skinnedMaterial = new Material[14];
 
 
 
+    [Header("Basic Config")]
     public float health;
+
+    [Header("Flags")]
     public bool isDead = false;
     public bool canMove = true;
     public bool isAttacking = false;
+
+
+    float dissolveRate = 0.0125f;
+    float refreshRate = 0.025f;
 
     public Transform aimIK;
 
@@ -40,6 +50,10 @@ public class Zombie : MonoBehaviour
     [SerializeField]
     private int headshotKillReward = 100;
 
+    [Header("Zombie Effects")]
+    public GameObject zombieHead;
+    public GameObject headshotVFX;
+
     private float timeOfLastAttack;
     private bool hasStopped = false;
 
@@ -53,6 +67,13 @@ public class Zombie : MonoBehaviour
         player = playerStats.transform;
         ragdollRigidbodies = GetComponentsInChildren<Rigidbody>();
         DisableRagdoll();
+        skinnedMesh = GetComponentsInChildren<SkinnedMeshRenderer>();
+
+        //Guardar todos los materiales de las partes del zombie
+        for (var i = 0; i < skinnedMesh.Length; i++)
+        {
+            skinnedMaterial[i] = skinnedMesh[i].material;
+        }
     }
 
     void Update()
@@ -146,10 +167,13 @@ public class Zombie : MonoBehaviour
                     playerStats.balance += headshotKillReward;
 
                     isDead = true;
+                    zombieHead.SetActive(false);
                     waveManager.remainingZombies--;
                     navMeshAgent.isStopped = true;
                     UIAnim.AddScore(headshotKillReward.ToString());
                     EnableRagdoll();
+                    headshotVFX.SetActive(true);
+                    StartCoroutine(DissolveBody());
 
                 }
                 else
@@ -159,9 +183,11 @@ public class Zombie : MonoBehaviour
                     isDead = true;
                     waveManager.remainingZombies--;
                     UIAnim.AddScore(killReward.ToString());
-
                     navMeshAgent.isStopped = true;
                     EnableRagdoll();
+                    Invoke("DissolveBody", 5);
+                    StartCoroutine(DissolveBody());
+
 
                 }
             }
@@ -193,6 +219,29 @@ public class Zombie : MonoBehaviour
             rigidbody.isKinematic = false;
         }
         anim.enabled = false;
+    }
+
+    IEnumerator DissolveBody()
+    {
+        yield return new WaitForSeconds(5);
+
+        if (skinnedMaterial.Length > 0)
+        {
+            float counter = 0;
+
+            while (skinnedMaterial[0].GetFloat("_DissolveAmount") < 1)
+            {
+                counter += dissolveRate;
+
+                for (int i = 0; i < skinnedMesh.Length; i++)
+                {
+                    skinnedMaterial[i].SetFloat("_DissolveAmount", counter);
+                }
+                yield return new WaitForSeconds(refreshRate);
+
+            }
+            Destroy(this.gameObject);
+        }
     }
 
 }

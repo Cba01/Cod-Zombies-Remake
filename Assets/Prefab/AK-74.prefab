@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1088807698095914990}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7197190753750600968}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7197190753931082145}
   - component: {fileID: 3310289410594443677}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AK-74
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,8 +118,8 @@ MonoBehaviour:
     m_Bits: 0
   anim: {fileID: 0}
   overrideAnim: {fileID: 22100000, guid: 1e485cd53845e9d4b8dc892d7931ddfb, type: 2}
-  bulletHoleGround: {fileID: 1000010191825552, guid: 83e55d3418297934fab882559d009285, type: 3}
-  bulletHoleEnemy: {fileID: 1000010191825552, guid: 83e55d3418297934fab882559d009285, type: 3}
+  bulletHoleGround: {fileID: 707084998190155162, guid: 571c4f714a78cf342b437723d31e0bf3, type: 3}
+  bulletHoleEnemy: {fileID: 707084998190155162, guid: 571c4f714a78cf342b437723d31e0bf3, type: 3}
   text: {fileID: 0}
 --- !u!1 &7943027127269644895
 GameObject:
@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7940335594799539305}
   - component: {fileID: 6392263018798760932}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Soviet AssaultRifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 7940037678083425565}
   - component: {fileID: 7947156676634893727}
   - component: {fileID: 7957709172629001221}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

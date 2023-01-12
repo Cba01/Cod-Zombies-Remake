@@ -30,6 +30,7 @@ MonoBehaviour:
   magazineSize: 30
   magazineAmount: 5
   reloadTime: 2.8
+  starterReloadTime: 2.8
   camShakeMagnitude: 5
   camShakeRoughness: 1
   camShakeFadeInTime: 0.05

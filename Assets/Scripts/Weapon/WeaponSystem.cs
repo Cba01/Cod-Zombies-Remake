@@ -12,6 +12,7 @@ public class WeaponSystem : MonoBehaviour
     private InputHandler inputHandler;
     private PlayerWeapon playerWeapon;
     private PlayerLocomotion playerLocomotion;
+    private PlayerStats playerStats;
 
     [Header("References")]
     [SerializeField]
@@ -21,6 +22,8 @@ public class WeaponSystem : MonoBehaviour
     public Transform attackPoint;
     public RaycastHit rayHit;
     public LayerMask whatIsEnemy;
+
+    private float reloadTimeReduction = 0.1f;
 
     [SerializeField]
     private Animator anim;
@@ -49,6 +52,7 @@ public class WeaponSystem : MonoBehaviour
         playerWeapon = FindObjectOfType<PlayerWeapon>();
         playerLocomotion = FindObjectOfType<PlayerLocomotion>();
         handleAnimations = FindObjectOfType<HandleAnimations>();
+        playerStats = FindObjectOfType<PlayerStats>();
 
 
     }
@@ -198,8 +202,21 @@ public class WeaponSystem : MonoBehaviour
     {
         gunData.reloading = true;
         playerLocomotion.canSprint = false;
-        handleAnimations.PlayReloadAnimation();
-        Invoke("ReloadFinished", gunData.reloadTime);
+        if (playerStats.speedCola == true)
+        {
+            handleAnimations.PlayFastReloadAnimation();
+            Invoke("ReloadFinished", gunData.reloadTime * 0.5f);
+            Debug.Log("RECARGA ACELERADA");
+
+        }
+        else
+        {
+            handleAnimations.PlayReloadAnimation();
+
+            Invoke("ReloadFinished", gunData.reloadTime);
+            Debug.Log("RECARGA NORMAL");
+
+        }
 
 
     }
@@ -229,6 +246,7 @@ public class WeaponSystem : MonoBehaviour
         gunData.reloading = false;
         gunData.ammoNeeded = 0;
         gunData.ammo = gunData.initialAmmo;
+
     }
 
     private void ShootingHoldInput()

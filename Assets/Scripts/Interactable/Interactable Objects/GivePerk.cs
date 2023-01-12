@@ -5,10 +5,19 @@ using UnityEngine;
 public class GivePerk : Interactable
 {
     PlayerStats playerStats;
+    public WeaponSystem[] weaponSystem;
+    public GunData[] gunData;
 
     private void Awake()
     {
         playerStats = FindObjectOfType<PlayerStats>();
+        weaponSystem = FindObjectsOfType<WeaponSystem>();
+        gunData = FindObjectsOfType<GunData>();
+        
+    }
+    private void Start()
+    {
+
     }
     protected override void Interact()
     {

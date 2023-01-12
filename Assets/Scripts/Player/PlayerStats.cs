@@ -40,8 +40,6 @@ public class PlayerStats : MonoBehaviour
     {
         health = maxHealth;
         stamina = maxStamina;
-        /* walkSpeed = 5f;
-        sprintSpeed = 8f; */
     }
 
     void Update()
@@ -121,7 +119,7 @@ public class PlayerStats : MonoBehaviour
     public void RegenHealth()
     {
         healthRegenTimer += Time.deltaTime;
-        if (health < maxHealth && healthRegenTimer > 2f)
+        if (health < maxHealth && healthRegenTimer > 5f)
         {
             health += healthRegenAmount * Time.deltaTime;
         }

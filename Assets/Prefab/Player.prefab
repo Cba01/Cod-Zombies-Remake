@@ -1,5 +1,123 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &362607884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 362607885}
+  - component: {fileID: 362607888}
+  - component: {fileID: 362607887}
+  - component: {fileID: 362607886}
+  m_Layer: 0
+  m_Name: WeaponCam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &362607885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362607884}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3156729342360867410}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &362607888
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362607884}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 4
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.1
+  far clip plane: 1000
+  field of view: 90
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 128
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &362607887
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362607884}
+  m_Enabled: 1
+--- !u!114 &362607886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362607884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &567193531703787940
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,7 +567,7 @@ GameObject:
   - component: {fileID: 2542822174817201589}
   - component: {fileID: 2535410578422067947}
   - component: {fileID: 2525234310031473495}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +649,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2546608605283186621}
   - component: {fileID: 7366417998536780913}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Soviet Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +699,7 @@ GameObject:
   - component: {fileID: 2546673936371909455}
   - component: {fileID: 2531505321439572771}
   - component: {fileID: 2525344900406735437}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +782,7 @@ GameObject:
   - component: {fileID: 2542441859635328873}
   - component: {fileID: 2531514859452305403}
   - component: {fileID: 2525811193869881367}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -747,7 +865,7 @@ GameObject:
   - component: {fileID: 2546341148548897405}
   - component: {fileID: 2535438461812762171}
   - component: {fileID: 2525831497662878041}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -987,7 +1105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3156729342202003332}
   - component: {fileID: 8874974927376317903}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1056,6 +1174,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 336723761606022014}
+  - {fileID: 362607885}
   m_Father: {fileID: 3156729342717929529}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1082,15 +1201,15 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 127
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1317,15 +1436,21 @@ MonoBehaviour:
   health: 0
   stamina: 0
   balance: 0
-  maxHealth: 100
+  speed: 0
+  maxHealth: 50
   chipSpeed: 50
   frontHealthBar: {fileID: 0}
   backHealthBar: {fileID: 0}
+  healthRegenAmount: 50
   maxStamina: 100
   staminaDrainPerFrame: 25
   staminaBar: {fileID: 0}
-  staminaRegenTimer: 2
   staminaRegenAmount: 10
+  walkSpeed: 5
+  sprintSpeed: 7
+  joggernog: 0
+  speedCola: 0
+  staminUp: 0
 --- !u!114 &3156729342884820040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,9 +1463,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33c08b731b0c60e43b02712dbde2fcb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   gravity: -9.8
-  jumpHeight: 3
+  jumpHeight: 0.5
   crouchTimer: 0
   lerpCrouch: 0
   canSprint: 0
@@ -1400,7 +1524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8228098689513410530}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2071,7 +2195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4807678262943791735}
   - component: {fileID: 5023649704580054645}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2197,7 +2321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8158626057412444764}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Unarmed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2355,7 +2479,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 717346467087715733}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Secundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2546,7 +2670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2482244070775881387}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Primary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2706,7 +2830,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8416430558093774601}
   - component: {fileID: 1214318858004763469}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2762,7 +2886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8416430559359048455}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

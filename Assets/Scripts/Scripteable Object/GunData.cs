@@ -37,6 +37,7 @@ public class GunData : ScriptableObject
     public int magazineSize;
     public int magazineAmount;
     public float reloadTime;
+    public float starterReloadTime;
 
     /*     [Header("Effects")]
      */

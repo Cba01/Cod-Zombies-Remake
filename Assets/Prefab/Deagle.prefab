@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9149155132549865762}
   - component: {fileID: 5530013540912414183}
   - component: {fileID: 517448090976199459}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 10698570025813425}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Deagle_Cerastes_1.0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6482118307605389873}
   - component: {fileID: 7962556590775822912}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Deagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 1954473317717194864}
   - component: {fileID: 2973193165811436062}
   - component: {fileID: 2154526993301641557}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7968053818110275826}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 9214020209715264432}
   - component: {fileID: 5099679314684101910}
   - component: {fileID: 4285847111302110611}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 1541311903784494464}
   - component: {fileID: 1501443161444803930}
   - component: {fileID: 7160022172786022217}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Magazine 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 1112741031641903106}
   - component: {fileID: 1016752258734725428}
   - component: {fileID: 6297837504579596034}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 1778548800495536855}
   - component: {fileID: 5556436222496817537}
   - component: {fileID: 3241041957423448862}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   - component: {fileID: 4352886106214416898}
   - component: {fileID: 118640316733274712}
   - component: {fileID: 2993393369206193629}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 9026609276256269576}
   - component: {fileID: 350959494477437554}
   - component: {fileID: 8973121938563897349}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grip Tape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 1775443670001649828}
   - component: {fileID: 4664937459566207346}
   - component: {fileID: 354534205300080975}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -893,7 +893,7 @@ GameObject:
   - component: {fileID: 5527740953712723506}
   - component: {fileID: 8948901097697051168}
   - component: {fileID: 7561627914462324157}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Magazine 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -976,7 +976,7 @@ GameObject:
   - component: {fileID: 1317370430731543995}
   - component: {fileID: 6131251540436857037}
   - component: {fileID: 2740047648843086104}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1059,7 +1059,7 @@ GameObject:
   - component: {fileID: 8896421738573946545}
   - component: {fileID: 1923909050599639941}
   - component: {fileID: 8726006214666843410}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1142,7 +1142,7 @@ GameObject:
   - component: {fileID: 4227813088012866655}
   - component: {fileID: 2297193505520008706}
   - component: {fileID: 7375004951425357223}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1223,7 +1223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073486392710232895}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1256,7 +1256,7 @@ GameObject:
   - component: {fileID: 2772542581793028880}
   - component: {fileID: 3051217737570614468}
   - component: {fileID: 4913770576850457868}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
