@@ -17,7 +17,7 @@ public class PlayerLocomotion : MonoBehaviour
     public float crouchTimer;
     public bool lerpCrouch;
     public bool canSprint;
-    
+
 
     [Header("Camera Prefs")]
     public GameObject cam;
@@ -34,6 +34,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     [Header("Player Animation")]
     private Animator anim;
+    public Transform playerArms;
 
     void Start()
     {
@@ -175,11 +176,13 @@ public class PlayerLocomotion : MonoBehaviour
         if (inputHandler.aim_Input)
         {
             anim.SetBool("Aim", true);
-        }
+             playerArms.localPosition = Vector3.Lerp(playerArms.localPosition, new Vector3(-0.102f, 0, 0), 0.5f);
+         }
         else if (!inputHandler.aim_Input)
         {
             anim.SetBool("Aim", false);
-
+            playerArms.localPosition = Vector3.Lerp(playerArms.localPosition, new Vector3(0, 0, 0), 0.5f);
+ 
         }
     }
 }
