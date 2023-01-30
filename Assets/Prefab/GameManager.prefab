@@ -46,11 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoints:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   zombiePrefab: {fileID: 4819883155263986149, guid: 47be2cdefee8c8f41b85aed928e77412, type: 3}
   currentRound: 1
   zombiesInRound: 0

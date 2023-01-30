@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3156729342360867410}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &362607888
 Camera:
@@ -59,7 +59,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 1000
-  field of view: 119
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
+  m_CameraType: 1
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
@@ -108,7 +108,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -371,8 +371,8 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1493840962578748410}
   - {fileID: 4807678262943791735}
+  - {fileID: 1493840962578748410}
   m_Father: {fileID: 336723761606022014}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -648,7 +648,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2546608605283186621}
-  - component: {fileID: 7366417998536780913}
   m_Layer: 7
   m_Name: Soviet Pistol
   m_TagString: Untagged
@@ -676,19 +675,6 @@ Transform:
   m_Father: {fileID: 8416430559359048455}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7366417998536780913
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2548940604165522053}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.035, y: 0.22, z: 0.37}
-  m_Center: {x: 0, y: -0.02, z: 0.03}
 --- !u!1 &2548977316078562467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,8 +1160,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3755992957961402499}
   - {fileID: 362607885}
+  - {fileID: 3755992957961402499}
   m_Father: {fileID: 3156729342717929529}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1246,14 +1232,15 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras: []
+  m_Cameras:
+  - {fileID: 362607888}
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 1
@@ -1476,6 +1463,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 8
+  playerArms: {fileID: 336723761606022014}
 --- !u!114 &3156729342884820047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1540,8 +1528,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3325439422495343475}
   m_LocalRotation: {x: -0.000000059604638, y: -0.000000014901159, z: -0.000000029802319, w: 1}
-  m_LocalPosition: {x: 0, y: 0.053999986, z: 0.23200019}
-  m_LocalScale: {x: 0.19999999, y: 0.20000005, z: 0.19999999}
+  m_LocalPosition: {x: -0, y: 0.059, z: 0.2057}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2546608605283186621}
@@ -2216,7 +2204,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1317687561340519432}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5023649704580054645
 SkinnedMeshRenderer:
@@ -2463,13 +2451,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6705834883049488261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.102, y: -0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 336723761606022014}
   m_Father: {fileID: 3156729342360867410}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6918411437501502057
 GameObject:
@@ -2904,7 +2892,7 @@ MonoBehaviour:
   attackPoint: {fileID: 8228098689513410530}
   whatIsEnemy:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   anim: {fileID: 0}
   overrideAnim: {fileID: 22100000, guid: f96d78bf498c5d647a4d5250b96199c9, type: 2}
   bulletHoleGround: {fileID: 1000010191825552, guid: 83e55d3418297934fab882559d009285, type: 3}
@@ -2933,15 +2921,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8416430559359048454}
-  m_LocalRotation: {x: 0.44441667, y: 0.335492, z: 0.50861526, w: 0.65669584}
-  m_LocalPosition: {x: 0.552, y: -0.198, z: 0.433}
+  m_LocalRotation: {x: 0.41163823, y: 0.38697797, z: 0.47531608, w: 0.67444545}
+  m_LocalPosition: {x: 0.565, y: -0.165, z: 0.415}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2546608605283186621}
   m_Father: {fileID: 8416430558093774601}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 14.029, y: 66.949, z: 84.819}
+  m_LocalEulerAnglesHint: {x: 10.8, y: 68.4, z: 77.7}
 --- !u!1 &8551307366389665364
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,7 +3160,7 @@ Transform:
   m_Children:
   - {fileID: 2257346530468571413}
   m_Father: {fileID: 1317687561340519432}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9142163387696187876
 GameObject:
