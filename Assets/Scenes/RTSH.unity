@@ -1578,6 +1578,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6323947845641213996, guid: ae1a7b3ddd1af0742ab5137b854a178a, type: 3}
+      propertyPath: m_enableVertexGradient
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae1a7b3ddd1af0742ab5137b854a178a, type: 3}
 --- !u!1 &2071252283

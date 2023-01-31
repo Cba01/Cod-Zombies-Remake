@@ -5,14 +5,12 @@ using UnityEngine;
 public class GivePerk : Interactable
 {
     PlayerStats playerStats;
-    public WeaponSystem[] weaponSystem;
-    public GunData[] gunData;
+    
+    public Transform perksPivot;
 
     private void Awake()
     {
         playerStats = FindObjectOfType<PlayerStats>();
-        weaponSystem = FindObjectsOfType<WeaponSystem>();
-        gunData = FindObjectsOfType<GunData>();
         
     }
     private void Start()
@@ -24,24 +22,26 @@ public class GivePerk : Interactable
 
     }
 
-    public void Joggernog()
+    public void Joggernog(GameObject logo)
     {
         if (playerStats.joggernog == false)
         {
             playerStats.maxHealth *= 2;
             playerStats.joggernog = true;
+            Instantiate(logo, perksPivot);
         }
     }
 
-    public void SpeedCola()
+    public void SpeedCola(GameObject logo)
     {
         if (playerStats.speedCola == false)
         {
             playerStats.speedCola = true;
+            Instantiate(logo, perksPivot);
 
         }
     }
-    public void StaminUp()
+    public void StaminUp(GameObject logo)
     {
         if (playerStats.staminUp == false)
         {
@@ -50,6 +50,8 @@ public class GivePerk : Interactable
             playerStats.sprintSpeed *= 1.5f;
             playerStats.staminaRegenAmount *= 2;
             playerStats.staminUp = true;
+            Instantiate(logo, perksPivot);
+
         }
 
     }

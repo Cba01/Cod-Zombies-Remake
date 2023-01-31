@@ -514,10 +514,10 @@ MonoBehaviour:
       - m_Target: {fileID: 452937599}
         m_TargetAssemblyTypeName: GivePerk, Assembly-CSharp
         m_MethodName: SpeedCola
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3047740203782862360, guid: a73361c04d50f3b4ab9e9126e9f2a2fe, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -537,8 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useEvents: 1
   promptMessage: Press [E] to Buy Speed-Cola
-  weaponSystem: []
-  gunData: []
+  perksPivot: {fileID: 525389424}
 --- !u!65 &452937600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -694,6 +693,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &525389424 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 379596200, guid: ae1a7b3ddd1af0742ab5137b854a178a, type: 3}
+  m_PrefabInstance: {fileID: 1160762204}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &629120453
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,10 +815,10 @@ MonoBehaviour:
       - m_Target: {fileID: 629120459}
         m_TargetAssemblyTypeName: GivePerk, Assembly-CSharp
         m_MethodName: Joggernog
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3917222456433121303, guid: eae5d439c32cc2f4ea67363bec4ff442, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -834,8 +838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useEvents: 1
   promptMessage: Press [E] to Buy Joggernog
-  weaponSystem: []
-  gunData: []
+  perksPivot: {fileID: 525389424}
 --- !u!1 &673205845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,10 +1107,10 @@ MonoBehaviour:
       - m_Target: {fileID: 874144636}
         m_TargetAssemblyTypeName: GivePerk, Assembly-CSharp
         m_MethodName: StaminUp
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2794530477084374857, guid: dc4a8d0ae13e27648879d4a9cbaf1123, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1127,8 +1130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useEvents: 1
   promptMessage: Press [E] to Buy Stamin-Up
-  weaponSystem: []
-  gunData: []
+  perksPivot: {fileID: 525389424}
 --- !u!65 &874144637
 BoxCollider:
   m_ObjectHideFlags: 0
