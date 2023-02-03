@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 119b95c90b3bf3d43b51e15709b1aa39
   - enabled: 1
-    path: Assets/Scenes/Level.unity
+    path: Assets/Scenes/Woods.unity
     guid: cdc006439598aa04086bc3e1dc303617
   - enabled: 1
     path: Assets/Scenes/RTSH.unity

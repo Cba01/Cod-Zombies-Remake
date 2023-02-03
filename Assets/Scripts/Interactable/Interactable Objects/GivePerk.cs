@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+
 
 public class GivePerk : Interactable
 {
     PlayerStats playerStats;
-    
+    UIAnim uiAnim;
+
     public Transform perksPivot;
 
     private void Awake()
     {
         playerStats = FindObjectOfType<PlayerStats>();
-        
+        uiAnim = FindObjectOfType<UIAnim>();
+
     }
     private void Start()
     {
@@ -28,7 +32,9 @@ public class GivePerk : Interactable
         {
             playerStats.maxHealth *= 2;
             playerStats.joggernog = true;
-            Instantiate(logo, perksPivot);
+            GameObject joggernogUI = Instantiate(logo, perksPivot);
+            uiAnim.PerkAnimation(joggernogUI.transform);
+            BuyAnimation();
         }
     }
 
@@ -37,8 +43,9 @@ public class GivePerk : Interactable
         if (playerStats.speedCola == false)
         {
             playerStats.speedCola = true;
-            Instantiate(logo, perksPivot);
-
+            GameObject speedCola = Instantiate(logo, perksPivot);
+            uiAnim.PerkAnimation(speedCola.transform);
+            BuyAnimation();
         }
     }
     public void StaminUp(GameObject logo)
@@ -50,10 +57,16 @@ public class GivePerk : Interactable
             playerStats.sprintSpeed *= 1.5f;
             playerStats.staminaRegenAmount *= 2;
             playerStats.staminUp = true;
-            Instantiate(logo, perksPivot);
-
+            GameObject staminUp = Instantiate(logo, perksPivot);
+            uiAnim.PerkAnimation(staminUp.transform);
+            BuyAnimation();
         }
 
+    }
+
+    private void BuyAnimation()
+    {
+        this.transform.DOShakeRotation(0.5f, 3f, 10, 90f);
     }
 
 

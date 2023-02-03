@@ -40,6 +40,11 @@ public class UIAnim : MonoBehaviour
 
     }
 
+    public void PerkAnimation(Transform perkPivot)
+    {
+        perkPivot.DOShakeScale(0.5f,0.3f,10,90f,true);
+    }
+
     
 
 

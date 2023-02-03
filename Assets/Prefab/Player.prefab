@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   step: 0.01
-  maxStepDistance: 0.6
+  maxStepDistance: 0.2
   smooth: 10
   rotationStep: 4
   maxRotationStep: 5
