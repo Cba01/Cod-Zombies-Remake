@@ -5340,62 +5340,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320917737}
   m_CullTransparentMesh: 1
---- !u!1 &1340425145
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1340425147}
-  - component: {fileID: 1340425146}
-  m_Layer: 0
-  m_Name: MenuController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1340425146
+--- !u!114 &1340425146 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6816508896099460061, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+  m_PrefabInstance: {fileID: 6816508895283454055}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340425145}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7b878d40adbcf04dba97120c3c6b745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTextValue: {fileID: 0}
-  controllerSenTextValue: {fileID: 1834970787}
-  controllerSenSlider: {fileID: 1722042039}
-  defaultSen: 4
-  mainControllerSen: 4
-  confirmationPrompt: {fileID: 0}
-  brightnessSlider: {fileID: 829960496}
-  brightnessTextValue: {fileID: 199811109}
-  defaultBrightness: 1
-  qualityDropdown: {fileID: 716649942}
-  fullScreenToggle: {fileID: 162501501}
-  resolutionDropdown: {fileID: 810371112}
---- !u!4 &1340425147
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340425145}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.712105, y: 41.89608, z: 0.9046076}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1453660196
 GameObject:
   m_ObjectHideFlags: 0
@@ -7585,3 +7540,88 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106364872}
   m_CullTransparentMesh: 1
+--- !u!1001 &6816508895283454055
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6816508896099460060, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816508896099460060, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 81.712105
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816508896099460060, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 41.89608
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816508896099460060, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.9046076
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816508896099460060, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816508896099460060, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816508896099460060, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816508896099460060, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816508896099460060, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816508896099460060, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816508896099460060, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6816508896099460061, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: qualityDropdown
+      value: 
+      objectReference: {fileID: 716649942}
+    - target: {fileID: 6816508896099460061, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: brightnessSlider
+      value: 
+      objectReference: {fileID: 829960496}
+    - target: {fileID: 6816508896099460061, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: fullScreenToggle
+      value: 
+      objectReference: {fileID: 162501501}
+    - target: {fileID: 6816508896099460061, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: resolutionDropdown
+      value: 
+      objectReference: {fileID: 810371112}
+    - target: {fileID: 6816508896099460061, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: brightnessTextValue
+      value: 
+      objectReference: {fileID: 199811109}
+    - target: {fileID: 6816508896099460061, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: controllerSenSlider
+      value: 
+      objectReference: {fileID: 1722042039}
+    - target: {fileID: 6816508896099460061, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: controllerSenTextValue
+      value: 
+      objectReference: {fileID: 1834970787}
+    - target: {fileID: 6816508896099460062, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}
+      propertyPath: m_Name
+      value: MenuController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 98824ad4092f78a4b976a3cffce4eedf, type: 3}

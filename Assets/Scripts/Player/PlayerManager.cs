@@ -36,6 +36,7 @@ public class PlayerManager : MonoBehaviour
         playerLocomotion.HandleInteract();
         playerLocomotion.HandleMovementAnimation();
         playerLocomotion.HandleAimAnimation();
+        playerLocomotion.HandlePause();
 
         //Weapon
         

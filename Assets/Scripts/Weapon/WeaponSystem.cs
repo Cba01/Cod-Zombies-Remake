@@ -62,6 +62,8 @@ public class WeaponSystem : MonoBehaviour
     }
     private void Update()
     {
+        if (inputHandler.pause_Input)
+            return;
         Debug.DrawRay(playerLocomotion.cam.transform.position, playerLocomotion.cam.transform.forward * 100, Color.green);
         ShootInput();
         playerUI.UpdateBullets(gunData.bulletsLeft, gunData.ammo);

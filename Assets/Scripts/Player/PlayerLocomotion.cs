@@ -143,6 +143,18 @@ public class PlayerLocomotion : MonoBehaviour
         }
     }
 
+    public void HandlePause()
+    {
+        if (inputHandler.pause_Input)
+        {
+            playerUI.PauseGame();
+        }
+        else
+        {
+            playerUI.ResumeGame();
+        }
+    }
+
     public void HandleMovementAnimation()
     {
         if (inputHandler.moveAmount == 0)
@@ -176,13 +188,13 @@ public class PlayerLocomotion : MonoBehaviour
         if (inputHandler.aim_Input)
         {
             anim.SetBool("Aim", true);
-             playerArms.localPosition = Vector3.Lerp(playerArms.localPosition, new Vector3(-0.102f, 0, 0), 0.5f);
-         }
+            playerArms.localPosition = Vector3.Lerp(playerArms.localPosition, new Vector3(-0.102f, 0, 0), 0.5f);
+        }
         else if (!inputHandler.aim_Input)
         {
             anim.SetBool("Aim", false);
             playerArms.localPosition = Vector3.Lerp(playerArms.localPosition, new Vector3(0, 0, 0), 0.5f);
- 
+
         }
     }
 }

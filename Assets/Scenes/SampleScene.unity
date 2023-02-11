@@ -527,11 +527,15 @@ PrefabInstance:
     - target: {fileID: 3156729342884820044, guid: 6f449171bba07764c85f688dee57a471, type: 3}
       propertyPath: backHealthBar
       value: 
-      objectReference: {fileID: 2104881183}
+      objectReference: {fileID: 813566527}
     - target: {fileID: 3156729342884820044, guid: 6f449171bba07764c85f688dee57a471, type: 3}
       propertyPath: frontHealthBar
       value: 
-      objectReference: {fileID: 813566527}
+      objectReference: {fileID: 2104881183}
+    - target: {fileID: 3156729342884820046, guid: 6f449171bba07764c85f688dee57a471, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 2001463058}
     - target: {fileID: 3156729342884820046, guid: 6f449171bba07764c85f688dee57a471, type: 3}
       propertyPath: prompText
       value: 
@@ -1343,6 +1347,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2001463058 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2001463058, guid: ae1a7b3ddd1af0742ab5137b854a178a, type: 3}
+  m_PrefabInstance: {fileID: 1160762204}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2065143189
 GameObject:
   m_ObjectHideFlags: 0

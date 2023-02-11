@@ -13,6 +13,8 @@ public class PlayerUI : MonoBehaviour
     private TextMeshProUGUI prompText;
     public TextMeshProUGUI bulletText;
 
+    public GameObject pauseMenu;
+
     [Header("Player Balance")]
     [SerializeField]
     private TextMeshProUGUI balanceText;
@@ -42,5 +44,20 @@ public class PlayerUI : MonoBehaviour
     public void UpdateBalance()
     {
         balanceText.SetText("$"+playerStats.balance);
+    }
+
+    public void PauseGame()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+    public void ResumeGame()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

@@ -31,6 +31,7 @@ public class InputHandler : MonoBehaviour
     public bool shootOnce_Input;
     public bool shootHold_Input;
     public bool reload_Input;
+    public bool pause_Input = false;
 
     public bool changingWeapon_Input;
     public float changingWeapon_Value;
@@ -56,8 +57,6 @@ public class InputHandler : MonoBehaviour
     private void Update()
     {
         changeTime += Time.deltaTime;
-        
-        Debug.Log(changingWeapon_Input);
 
     }
 
@@ -70,6 +69,7 @@ public class InputHandler : MonoBehaviour
         SprintInput();
         InteractInput();
         GroundedInput();
+        PauseInput();
 
         OneShotInput();
         HoldShootInput();
@@ -126,6 +126,10 @@ public class InputHandler : MonoBehaviour
             
     }
 
+    private void PauseInput()
+    {
+        onFoot.Pause.performed += i => pause_Input = !pause_Input;
+    }
 
     private void MoveInput()
     {

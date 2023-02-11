@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 362607885}
   - component: {fileID: 362607888}
-  - component: {fileID: 362607887}
   - component: {fileID: 362607886}
   m_Layer: 0
   m_Name: WeaponCam
@@ -77,14 +76,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &362607887
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362607884}
-  m_Enabled: 1
 --- !u!114 &362607886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1385,6 +1376,7 @@ MonoBehaviour:
   shootOnce_Input: 0
   shootHold_Input: 0
   reload_Input: 0
+  pause_Input: 0
   changingWeapon_Input: 0
   changingWeapon_Value: 0
   inventoryIndex: 0
@@ -1490,6 +1482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prompText: {fileID: 0}
   bulletText: {fileID: 0}
+  pauseMenu: {fileID: 0}
   balanceText: {fileID: 0}
 --- !u!114 &3156729342884820045
 MonoBehaviour:
