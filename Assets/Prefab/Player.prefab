@@ -2891,6 +2891,9 @@ MonoBehaviour:
   bulletHoleGround: {fileID: 1000010191825552, guid: 83e55d3418297934fab882559d009285, type: 3}
   bulletHoleEnemy: {fileID: 1000010191825552, guid: 83e55d3418297934fab882559d009285, type: 3}
   text: {fileID: 0}
+  audioSource: {fileID: 0}
+  shootSound: {fileID: 0}
+  reloadSound: {fileID: 0}
 --- !u!1 &8416430559359048454
 GameObject:
   m_ObjectHideFlags: 0

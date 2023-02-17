@@ -18,11 +18,16 @@ public class WaveManager : MonoBehaviour
     int spawnedZombies = 0;
     public int remainingZombies;
 
+    [Header("Audio")]
+    public AudioClip changeRoundSound;
+    private AudioSource audioSource;
+
 
 
     void Start()
     {
         uIAnim = FindObjectOfType<UIAnim>();
+        audioSource = GetComponent<AudioSource>();
         roundText = GameObject.FindGameObjectWithTag("RoundUI");
 
         ZombiesInRound();
@@ -48,6 +53,7 @@ public class WaveManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.6f);
         //cambiar la UI del round
+        audioSource.PlayOneShot(changeRoundSound);
         uIAnim.ChangeRoundAnimation();
         roundText.GetComponent<TextMeshProUGUI>().text = "" + currentRound;
         StartCoroutine(SpawnZombies());

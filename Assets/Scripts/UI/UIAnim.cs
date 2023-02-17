@@ -29,7 +29,22 @@ public class UIAnim : MonoBehaviour
         scoreEarned.transform.DOLocalMove(new Vector2(-80, Random.Range(-20, 20)), 1).SetEase(Ease.OutCubic);
         scoreText.DOFade(0, 1).SetEase(Ease.InQuint);
         Destroy(scoreEarned, 1);
+    }
 
+    public void DiscountScore(string score)
+    {
+        GameObject scoreEarned = new GameObject("ScoreEarned");
+        scoreEarned.transform.SetParent(ScorePosition.transform, false);
+        scoreEarned.transform.position = ScorePosition.transform.position;
+        TextMeshProUGUI scoreText = scoreEarned.AddComponent<TextMeshProUGUI>();
+        scoreText.text = "-" + score;
+        scoreText.fontSize = 15;
+        scoreText.color = Color.red;
+        scoreText.alignment = TextAlignmentOptions.Center;
+        scoreText.alignment = TextAlignmentOptions.CenterGeoAligned;
+        scoreEarned.transform.DOLocalMove(new Vector2(-80, Random.Range(-20, 20)), 1).SetEase(Ease.OutCubic);
+        scoreText.DOFade(0, 1).SetEase(Ease.InQuint);
+        Destroy(scoreEarned, 1);
     }
 
     public async void ChangeRoundAnimation()

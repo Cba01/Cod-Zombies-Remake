@@ -40,6 +40,10 @@ public class WeaponSystem : MonoBehaviour
     public TextMeshProUGUI text;
     private PlayerUI playerUI;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip shootSound;
+    public AudioClip reloadSound;
 
 
     private void Awake()
@@ -108,6 +112,7 @@ public class WeaponSystem : MonoBehaviour
     private void Shoot()
     {
 
+        audioSource.PlayOneShot(shootSound);
         gunData.readyToShoot = false;
         playerLocomotion.canSprint = false;
 
@@ -202,6 +207,7 @@ public class WeaponSystem : MonoBehaviour
 
     private void Reload()
     {
+        audioSource.PlayOneShot(reloadSound);
         gunData.reloading = true;
         playerLocomotion.canSprint = false;
         if (playerStats.speedCola == true)

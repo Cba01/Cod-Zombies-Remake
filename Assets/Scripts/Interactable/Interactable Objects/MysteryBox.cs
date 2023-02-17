@@ -27,6 +27,10 @@ public class MysteryBox : Interactable
     private int lastSelectedGun;
     public int selectedGun;
 
+    [Header("Audio")]
+    public AudioClip music;
+    private AudioSource audioSource;
+
 
     public bool weaponSelected = false;
 
@@ -37,6 +41,7 @@ public class MysteryBox : Interactable
         weaponAnimation = GetComponentInChildren<Animation>();
         mysteryBoxAnimator = GetComponent<Animator>();
         weaponHolderSlot = FindObjectOfType<WeaponHolderSlot>();
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -103,6 +108,8 @@ public class MysteryBox : Interactable
             mysteryBoxOpen = true;
             mysteryBoxAnimator.SetBool("isOpen", mysteryBoxOpen);
             weaponAnimation.Play();
+            audioSource.PlayOneShot(music);
+
         }
 
 

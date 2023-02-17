@@ -125,5 +125,23 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public bool CanBePurchased(int price)
+    {
+        if (price <= balance)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void DiscountBalance(int price)
+    {
+        balance -= price;
+
+    }
+
 
 }

@@ -54,6 +54,15 @@ public class Zombie : MonoBehaviour
     public GameObject zombieHead;
     public GameObject headshotVFX;
 
+    [Header("Audio")]
+    public AudioClip damageSound;
+    public AudioClip headshotSound;
+    public AudioClip attackSound;
+    public AudioClip deathSound;
+    public AudioClip dissolveSound;
+    private AudioSource audioSource;
+
+
     private float timeOfLastAttack;
     private bool hasStopped = false;
 
@@ -68,6 +77,7 @@ public class Zombie : MonoBehaviour
         ragdollRigidbodies = GetComponentsInChildren<Rigidbody>();
         DisableRagdoll();
         skinnedMesh = GetComponentsInChildren<SkinnedMeshRenderer>();
+        audioSource = GetComponent<AudioSource>();
 
         //Guardar todos los materiales de las partes del zombie
         for (var i = 0; i < skinnedMesh.Length; i++)
@@ -120,7 +130,7 @@ public class Zombie : MonoBehaviour
             anim.SetTrigger("isAttacking");
             playerStats.TakeDamage(10);
             CameraShaker.Instance.ShakeOnce(5, 1, 0.5f, 0.5f);
-
+            audioSource.PlayOneShot(attackSound);
         }
     }
 
@@ -174,6 +184,7 @@ public class Zombie : MonoBehaviour
                     EnableRagdoll();
                     headshotVFX.SetActive(true);
                     StartCoroutine(DissolveBody());
+                    audioSource.PlayOneShot(headshotSound);
 
                 }
                 else
@@ -187,6 +198,7 @@ public class Zombie : MonoBehaviour
                     EnableRagdoll();
                     Invoke("DissolveBody", 5);
                     StartCoroutine(DissolveBody());
+                    audioSource.PlayOneShot(deathSound);
 
 
                 }
@@ -197,6 +209,7 @@ public class Zombie : MonoBehaviour
         {
             playerStats.balance += hitReward;
             UIAnim.AddScore(hitReward.ToString());
+            audioSource.PlayOneShot(damageSound);
 
         }
     }
@@ -223,7 +236,9 @@ public class Zombie : MonoBehaviour
 
     IEnumerator DissolveBody()
     {
+
         yield return new WaitForSeconds(5);
+        audioSource.PlayOneShot(dissolveSound);
 
         if (skinnedMaterial.Length > 0)
         {
