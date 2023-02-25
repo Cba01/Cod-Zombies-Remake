@@ -36,6 +36,10 @@ public class PlayerLocomotion : MonoBehaviour
     private Animator anim;
     public Transform playerArms;
 
+    [Header("Player Audio")]
+    public AudioSource audioSourceWalk;
+    public AudioSource audioSourceRun;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -118,6 +122,7 @@ public class PlayerLocomotion : MonoBehaviour
         {
             playerStats.speed = playerStats.walkSpeed;
             playerStats.RegenStamina();
+
         }
     }
 
@@ -160,20 +165,29 @@ public class PlayerLocomotion : MonoBehaviour
         if (inputHandler.moveAmount == 0)
         {
             anim.SetFloat("Speed", 0f);
+            audioSourceWalk.enabled = false;
+            audioSourceRun.enabled = false;
+
         }
         else if (inputHandler.moveAmount > 0 && !inputHandler.sprint_Input)
         {
             anim.SetFloat("Speed", 0.5f, 0.2f, Time.deltaTime);
+            audioSourceWalk.enabled = true;
+            audioSourceRun.enabled = false;
 
         }
         else if (inputHandler.moveAmount > 0 && inputHandler.sprint_Input && playerStats.stamina > 0.1f && canSprint)
         {
             anim.SetFloat("Speed", 1f, 0.2f, Time.deltaTime);
+            audioSourceWalk.enabled = false;
+            audioSourceRun.enabled = true;
 
         }
         else if (playerStats.stamina < 0.1f)
         {
             anim.SetFloat("Speed", 0.5f, 0.2f, Time.deltaTime);
+            audioSourceWalk.enabled = true;
+            audioSourceRun.enabled = false;
 
         }
     }
@@ -197,4 +211,5 @@ public class PlayerLocomotion : MonoBehaviour
 
         }
     }
+
 }

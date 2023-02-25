@@ -17,16 +17,15 @@ public class WeaponSystem : MonoBehaviour
     [Header("References")]
     [SerializeField]
     public GunData gunData;
-    [SerializeField]
-    public Camera fpsCam;
+   
+    private Camera fpsCam;
     public Transform attackPoint;
     public RaycastHit rayHit;
     public LayerMask whatIsEnemy;
 
     private float reloadTimeReduction = 0.1f;
 
-    [SerializeField]
-    private Animator anim;
+
     [SerializeField]
     private AnimatorOverrideController overrideAnim;
     private HandleAnimations handleAnimations;
@@ -37,8 +36,7 @@ public class WeaponSystem : MonoBehaviour
     public GameObject bulletHoleEnemy;
 
     [Header("Player UI")]
-    public TextMeshProUGUI text;
-    private PlayerUI playerUI;
+   private PlayerUI playerUI;
 
     [Header("Audio")]
     public AudioSource audioSource;
@@ -62,7 +60,7 @@ public class WeaponSystem : MonoBehaviour
     }
     private void Start()
     {
-        handleAnimations.SetAnimationController(overrideAnim);
+        
     }
     private void Update()
     {
@@ -177,8 +175,7 @@ public class WeaponSystem : MonoBehaviour
 
         CameraShaker.Instance.ShakeOnce(gunData.camShakeMagnitude, gunData.camShakeRoughness, gunData.camShakeFadeInTime, gunData.camShakeFadeOutTime);
 
-        playerLocomotion.HandleShootAnimation();
-        /* anim.CrossFade("Shoot", 1f, -1, 0f); */
+         playerLocomotion.HandleShootAnimation();
 
         gunData.bulletsLeft--;
         gunData.bulletsShot--;

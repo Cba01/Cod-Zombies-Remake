@@ -19,7 +19,7 @@ public class GiveGun : Interactable
     
     protected override void Interact()
     {
-        weaponHolderSlot.LoadWeaponModel(gun);
+         weaponHolderSlot.LoadWeaponModel(gun);
 
     }
 }

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6423aa02388b69547844583c1bb4e941, type: 3}
+  m_Name: P90
+  m_EditorClassIdentifier: 
+  name: P90
+  model: {fileID: 0}
+  controller: {fileID: 0}
+  damage: 15
+  timeBetweenShooting: 0.05
+  spread: 0.01
+  range: 100
+  timeBetweenShots: 0
+  bulletsPerTap: 1
+  allowButtonHold: 1
+  initialAmmo: 360
+  ammo: 260
+  ammoNeeded: 50
+  bulletsLeft: 0
+  bulletsShot: 0
+  magazineSize: 50
+  magazineAmount: 10
+  reloadTime: 2.8
+  starterReloadTime: 2.8
+  camShakeMagnitude: 5
+  camShakeRoughness: 1
+  camShakeFadeInTime: 0.05
+  camShakeFadeOutTime: 0.05
+  muzzleFlash: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4, type: 3}
+  reloading: 0
+  shooting: 0
+  readyToShoot: 1

@@ -74,11 +74,9 @@ public class WeaponHolder : MonoBehaviour
     {
         if (InventoryIsFull())
         {
-            /*             Destroy(weapons[inputHandler.inventoryIndex].gameObject);
-             */
+            
             Destroy(transform.GetChild(inputHandler.inventoryIndex).gameObject);
-            /*             weapons[inputHandler.inventoryIndex] = gunPrefab.transform;
-             */
+            
             GameObject gun = Instantiate(gunPrefab) as GameObject;
             if (parentOverride != null)
             {
@@ -107,7 +105,6 @@ public class WeaponHolder : MonoBehaviour
             //Posicion y rotacion del model en relacion a la posicion y rotacion del padre
             gun.transform.localPosition = Vector3.zero;
             gun.transform.localRotation = Quaternion.identity;
-            //model.transform.localScale = Vector3.one;
         }
 
         SetWeapons();
