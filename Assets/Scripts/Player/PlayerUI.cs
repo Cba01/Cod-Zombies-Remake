@@ -12,6 +12,7 @@ public class PlayerUI : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI prompText;
     public TextMeshProUGUI bulletText;
+    public TextMeshProUGUI gunNameText;
 
     public GameObject pauseMenu;
 
@@ -43,7 +44,12 @@ public class PlayerUI : MonoBehaviour
 
     public void UpdateBalance()
     {
-        balanceText.SetText("$"+playerStats.balance);
+        balanceText.SetText("$" + playerStats.balance);
+    }
+
+    public void UpdateGunNameUI(string name)
+    {
+        gunNameText.SetText(name);
     }
 
     public void PauseGame()

@@ -153,10 +153,24 @@ public class PlayerLocomotion : MonoBehaviour
         if (inputHandler.pause_Input)
         {
             playerUI.PauseGame();
+
+            //Pausar Audios que ya se estan reproduciendo
+            AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
+            foreach (AudioSource audioSource in audioSources)
+            {
+                audioSource.Pause();
+            }
         }
         else
         {
             playerUI.ResumeGame();
+            
+            //Pausar Audios que ya se estan reproduciendo
+            AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
+            foreach (AudioSource audioSource in audioSources)
+            {
+                audioSource.UnPause();
+            }
         }
     }
 

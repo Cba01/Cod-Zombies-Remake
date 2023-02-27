@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 
@@ -13,6 +14,11 @@ public class UIAnim : MonoBehaviour
 
 
     public TextMeshProUGUI roundTxt;
+
+
+    [Header("Hit Marker")]
+    public Transform hitMarkerSpawn;
+    public Image hitMarker;
 
 
     public void AddScore(string score)

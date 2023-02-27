@@ -23,6 +23,8 @@ public class Zombie : MonoBehaviour
 
     [Header("Basic Config")]
     public float health;
+    public float walkSpeed;
+
 
     [Header("Flags")]
     public bool isDead = false;
@@ -37,8 +39,6 @@ public class Zombie : MonoBehaviour
 
     [SerializeField]
     private Transform player;
-    [SerializeField]
-    private float walkSpeed;
     [SerializeField]
     private float attackSpeed;
     [SerializeField]

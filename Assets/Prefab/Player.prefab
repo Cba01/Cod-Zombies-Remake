@@ -1486,6 +1486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prompText: {fileID: 0}
   bulletText: {fileID: 0}
+  gunNameText: {fileID: 0}
   pauseMenu: {fileID: 0}
   balanceText: {fileID: 0}
 --- !u!114 &3156729342884820045

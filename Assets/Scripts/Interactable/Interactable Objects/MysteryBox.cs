@@ -18,14 +18,18 @@ public class MysteryBox : Interactable
     public GameObject[] guns;
     public GameObject[] gunsPrefab;
     public Transform cubePosition;
+    public GameObject MysteryBoxLight;
 
     [SerializeField]
     private float timer;
     int counter, counterCompare;
 
+
+
     [SerializeField]
     private int lastSelectedGun;
     public int selectedGun;
+
 
     [Header("Audio")]
     public AudioClip music;
@@ -49,8 +53,8 @@ public class MysteryBox : Interactable
     {
         if (mysteryBoxOpen == true)
         {
-
-            if (weaponAnimation.IsPlaying("WeaponShow_MysteryBox"))
+            //Mientras se reproduzca la animacion(Nombre exacto) de las armas entonces elegir el arma 
+            if (weaponAnimation.IsPlaying("MB_ShowGun"))
             {
                 timer += Time.deltaTime;
 
@@ -78,6 +82,8 @@ public class MysteryBox : Interactable
                 timer = 0;
                 mysteryBoxOpen = false;
                 mysteryBoxAnimator.SetBool("isOpen", mysteryBoxOpen);
+                MysteryBoxLight.SetActive(false);
+
 
             }
         }
@@ -103,9 +109,11 @@ public class MysteryBox : Interactable
             weaponAnimation.Stop();
 
         }
-        else
+        else if (mysteryBoxOpen != true)
         {
             mysteryBoxOpen = true;
+            MysteryBoxLight.SetActive(true);
+            Debug.Log("Mystery Box Open");
             mysteryBoxAnimator.SetBool("isOpen", mysteryBoxOpen);
             weaponAnimation.Play();
             audioSource.PlayOneShot(music);

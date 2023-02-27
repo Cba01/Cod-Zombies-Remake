@@ -82,6 +82,7 @@ public class WeaponSystem : MonoBehaviour
 
     private void OnEnable()
     {
+        playerUI.UpdateGunNameUI(gunData.name);
         handleAnimations.GunUpAnimation();
         handleAnimations.SetAnimationController(overrideAnim);
 
