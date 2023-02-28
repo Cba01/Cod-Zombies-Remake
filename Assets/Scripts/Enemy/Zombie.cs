@@ -24,6 +24,7 @@ public class Zombie : MonoBehaviour
     [Header("Basic Config")]
     public float health;
     public float walkSpeed;
+    public float attackDamage;
 
 
     [Header("Flags")]
@@ -128,7 +129,7 @@ public class Zombie : MonoBehaviour
             isAttacking = true;
             navMeshAgent.isStopped = true;
             anim.SetTrigger("isAttacking");
-            playerStats.TakeDamage(10);
+            playerStats.TakeDamage(attackDamage);
             CameraShaker.Instance.ShakeOnce(5, 1, 0.5f, 0.5f);
             audioSource.PlayOneShot(attackSound);
         }

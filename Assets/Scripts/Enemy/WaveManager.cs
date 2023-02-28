@@ -68,6 +68,7 @@ public class WaveManager : MonoBehaviour
             GameObject zombie = Instantiate(zombiePrefab, spawnPoints[chosenSpawn].transform.position, Quaternion.identity);
             zombie.GetComponent<Zombie>().health = ZombieHealth();
             zombie.GetComponent<Zombie>().walkSpeed *= ZombieSpeed();
+            zombie.GetComponent<Zombie>().attackDamage *= ZombieAttackDamage();
             spawnedZombies++;
         }
         float substractTime = (currentRound / 100) * 25;
@@ -111,6 +112,23 @@ public class WaveManager : MonoBehaviour
             speed = 1;
             return speed;
         }
+    }
+
+    float ZombieAttackDamage()
+    {
+        float attackDamage;
+        if (currentRound > 5)
+        {
+            attackDamage = 2;
+            return attackDamage;
+        }
+        else
+        {
+            attackDamage = 1;
+            return attackDamage;
+        }
+        
+
     }
 
     void ZombiesInRound()

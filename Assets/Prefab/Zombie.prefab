@@ -2181,12 +2181,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  walkSpeed: 2
+  attackDamage: 20
   isDead: 0
   canMove: 1
   isAttacking: 0
   aimIK: {fileID: 1080530372191189528}
   player: {fileID: 0}
-  walkSpeed: 2
   attackSpeed: 1
   damageMultiplier: 0
   hitReward: 10
@@ -3424,8 +3425,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.13138478
-  m_Center: {x: -0.05077782, y: 0.039999995, z: 9.809016e-10}
+  m_Radius: 0.15932442
+  m_Center: {x: -0.03, y: 0.039999995, z: 0}
 --- !u!144 &1450541130
 CharacterJoint:
   m_ObjectHideFlags: 0
