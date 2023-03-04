@@ -150,7 +150,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     public void HandlePause()
     {
-        if (inputHandler.pause_Input)
+        if (inputHandler.pause_Input  && !playerStats.isDead )
         {
             playerUI.PauseGame();
 
@@ -161,7 +161,7 @@ public class PlayerLocomotion : MonoBehaviour
                 audioSource.Pause();
             }
         }
-        else
+        else if(!playerStats.isDead)
         {
             playerUI.ResumeGame();
             

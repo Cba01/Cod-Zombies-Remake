@@ -89,7 +89,7 @@ public class Zombie : MonoBehaviour
 
     void Update()
     {
-        if (!isDead)
+        if (!isDead && !playerStats.isDead)
         {
             LookAtPlayer();
 

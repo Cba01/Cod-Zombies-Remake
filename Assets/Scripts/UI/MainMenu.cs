@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
 
     [Header("Volume Settings")]
     [SerializeField] private TMP_Text volumeTextValue = null;
+    [SerializeField] private Slider volumeSlider = null;
+
     [Header("Gameplay Settings")]
     [SerializeField] private TMP_Text controllerSenTextValue = null;
     [SerializeField] private Slider controllerSenSlider = null;
@@ -87,13 +89,14 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("masterSen", mainControllerSen);
         PlayerPrefs.SetFloat("masterBrightness", _brightnessLevel);
         PlayerPrefs.SetInt("masterQuality", _qualityLevel);
+        PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
         QualitySettings.SetQualityLevel(_qualityLevel);
         PlayerPrefs.SetInt("masterFullscreen", (_isFullScreen ? 1 : 0));
         Screen.fullScreen = _isFullScreen;
 
 
-        StartCoroutine(ConfirmationBox());
-    }
+/*         StartCoroutine(ConfirmationBox());
+ */    }
 
     public void BackBtn(GameObject promtp)
     {
@@ -103,12 +106,18 @@ public class MainMenu : MonoBehaviour
     public void SetBrightness(float brightness)
     {
         _brightnessLevel = brightness;
-        brightnessTextValue.text = brightness.ToString("0.0");
+        brightnessTextValue.text = brightness.ToString("0");
     }
 
     public void SetFullScreen(bool isFullScreen)
     {
         _isFullScreen = isFullScreen;
+    }
+
+    public void SetVolume(float volume)
+    {
+        AudioListener.volume = volume;
+        volumeTextValue.text = volume.ToString("0");
     }
 
     public void SetQuality(int qualityIndex)

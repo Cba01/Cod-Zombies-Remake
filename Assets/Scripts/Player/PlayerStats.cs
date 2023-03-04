@@ -20,6 +20,10 @@ public class PlayerStats : MonoBehaviour
     private float healthRegenTimer;
     public float healthRegenAmount;
 
+    [Header("Death Screen")]
+    public DeathScreen deathScreen;
+    public bool isDead;
+
     [Header("Player Stamina")]
     public float maxStamina = 100f;
     public float staminaDrainPerFrame = 10.0f;
@@ -82,6 +86,11 @@ public class PlayerStats : MonoBehaviour
         healthRegenTimer = 0f;
         health -= damage;
         lerpTimer = 0f;
+        if (health <= 0)
+        {
+            isDead = true;
+            deathScreen.DeathScreenGO();
+        }
     }
 
     public void RestoreHealth(float healAmount)
@@ -143,5 +152,6 @@ public class PlayerStats : MonoBehaviour
 
     }
 
+   
 
 }

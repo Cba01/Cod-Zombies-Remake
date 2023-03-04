@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 75c3880ac38904d4896154926114ae48, type: 2}
 --- !u!1 &24905384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,15 +1807,15 @@ PrefabInstance:
     - target: {fileID: 3156729342884820044, guid: 6f449171bba07764c85f688dee57a471, type: 3}
       propertyPath: staminaBar
       value: 
-      objectReference: {fileID: 1736866719}
+      objectReference: {fileID: 0}
     - target: {fileID: 3156729342884820044, guid: 6f449171bba07764c85f688dee57a471, type: 3}
       propertyPath: backHealthBar
       value: 
-      objectReference: {fileID: 1235409375}
+      objectReference: {fileID: 0}
     - target: {fileID: 3156729342884820044, guid: 6f449171bba07764c85f688dee57a471, type: 3}
       propertyPath: frontHealthBar
       value: 
-      objectReference: {fileID: 1520498026}
+      objectReference: {fileID: 0}
     - target: {fileID: 3156729342884820046, guid: 6f449171bba07764c85f688dee57a471, type: 3}
       propertyPath: pauseMenu
       value: 
@@ -5153,17 +5153,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1235409375 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 813566527, guid: ae1a7b3ddd1af0742ab5137b854a178a, type: 3}
-  m_PrefabInstance: {fileID: 1765273238}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1260452820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6297,17 +6286,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000011240085458, guid: a52d55d99a7b23e42b2d401f956a3e52, type: 3}
   m_PrefabInstance: {fileID: 1475168697}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1520498026 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2104881183, guid: ae1a7b3ddd1af0742ab5137b854a178a, type: 3}
-  m_PrefabInstance: {fileID: 1765273238}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1542213933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7269,17 +7247,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000011240085458, guid: a52d55d99a7b23e42b2d401f956a3e52, type: 3}
   m_PrefabInstance: {fileID: 1722815865}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1736866719 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6323947844911402047, guid: ae1a7b3ddd1af0742ab5137b854a178a, type: 3}
-  m_PrefabInstance: {fileID: 1765273238}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1739106061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9517,6 +9484,7 @@ MonoBehaviour:
   currentRound: 1
   zombiesInRound: 0
   remainingZombies: 0
+  changeRoundSound: {fileID: 0}
 --- !u!1 &8514971053225136997
 GameObject:
   m_ObjectHideFlags: 0

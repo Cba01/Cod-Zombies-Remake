@@ -1424,6 +1424,8 @@ MonoBehaviour:
   frontHealthBar: {fileID: 0}
   backHealthBar: {fileID: 0}
   healthRegenAmount: 50
+  deathScreen: {fileID: 0}
+  isDead: 0
   maxStamina: 100
   staminaDrainPerFrame: 25
   staminaBar: {fileID: 0}
