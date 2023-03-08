@@ -35,8 +35,8 @@ public class PlayerManager : MonoBehaviour
         playerLocomotion.HandleSprint();
         playerLocomotion.HandleInteract();
         playerLocomotion.HandleMovementAnimation();
-        playerLocomotion.HandleAimAnimation();
-        playerLocomotion.HandlePause();
+/*         playerLocomotion.HandleAimAnimation();
+ */        playerLocomotion.HandleInterface();
 
         //Weapon
         
@@ -52,5 +52,6 @@ public class PlayerManager : MonoBehaviour
         inputHandler.shootOnce_Input = false;
         inputHandler.reload_Input = false;
         inputHandler.changingWeapon_Input = false;
+        inputHandler.debug_Input = false;
     }
 }

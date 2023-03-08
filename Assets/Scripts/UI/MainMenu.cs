@@ -4,26 +4,32 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+
 
 public class MainMenu : MonoBehaviour
 {
+    PlayerLocomotion playerLocomotion;
+    Volume volume;
 
     [Header("Volume Settings")]
     [SerializeField] private TMP_Text volumeTextValue = null;
     [SerializeField] private Slider volumeSlider = null;
+    [SerializeField] private float defaultVolume = 1;
 
     [Header("Gameplay Settings")]
     [SerializeField] private TMP_Text controllerSenTextValue = null;
     [SerializeField] private Slider controllerSenSlider = null;
-    [SerializeField] private int defaultSen = 4;
-    public int mainControllerSen = 4;
+    [SerializeField] private int defaultSen = 30;
+    public int mainControllerSen = 30;
     [Header("Confirmation")]
     [SerializeField] private GameObject confirmationPrompt = null;
 
     [Header("Graphics Settings")]
     [SerializeField] private Slider brightnessSlider = null;
     [SerializeField] private TMP_Text brightnessTextValue = null;
-    [SerializeField] private float defaultBrightness = 1;
+    [SerializeField] private float defaultBrightness = 0.2f;
 
     [Space(10)]
     [SerializeField] private TMP_Dropdown qualityDropdown;
@@ -39,6 +45,8 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
+        volume = FindObjectOfType<Volume>();
+
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
@@ -94,9 +102,17 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("masterFullscreen", (_isFullScreen ? 1 : 0));
         Screen.fullScreen = _isFullScreen;
 
+        volume.profile.TryGet(out ColorAdjustments colorAdjustments);
+        colorAdjustments.postExposure.value = _brightnessLevel;
 
-/*         StartCoroutine(ConfirmationBox());
- */    }
+        playerLocomotion = FindObjectOfType<PlayerLocomotion>();
+        playerLocomotion.xSensitivity = mainControllerSen;
+        playerLocomotion.ySensitivity = mainControllerSen;
+
+
+        /*         StartCoroutine(ConfirmationBox());
+         */
+    }
 
     public void BackBtn(GameObject promtp)
     {
@@ -105,8 +121,9 @@ public class MainMenu : MonoBehaviour
 
     public void SetBrightness(float brightness)
     {
+
         _brightnessLevel = brightness;
-        brightnessTextValue.text = brightness.ToString("0");
+        brightnessTextValue.text = brightness.ToString("0.0");
     }
 
     public void SetFullScreen(bool isFullScreen)
@@ -117,7 +134,7 @@ public class MainMenu : MonoBehaviour
     public void SetVolume(float volume)
     {
         AudioListener.volume = volume;
-        volumeTextValue.text = volume.ToString("0");
+        volumeTextValue.text = volume.ToString("0.0");
     }
 
     public void SetQuality(int qualityIndex)

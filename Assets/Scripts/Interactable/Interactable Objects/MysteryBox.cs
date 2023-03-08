@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class MysteryBox : Interactable
 {
+    [Header("Price")]
+    public int price;
+    [Space]
     [SerializeField]
     private GameObject mysteryBox;
     [SerializeField]
     private bool mysteryBoxOpen = false;
+
+    PlayerStats playerStats;
+    UIAnim uiAnim;
 
     private WeaponHolderSlot weaponHolderSlot;
 
@@ -42,6 +48,8 @@ public class MysteryBox : Interactable
     // Start is called before the first frame update
     void Start()
     {
+        uiAnim = FindObjectOfType<UIAnim>();
+        playerStats = FindObjectOfType<PlayerStats>();
         weaponAnimation = GetComponentInChildren<Animation>();
         mysteryBoxAnimator = GetComponent<Animator>();
         weaponHolderSlot = FindObjectOfType<WeaponHolderSlot>();
@@ -95,6 +103,7 @@ public class MysteryBox : Interactable
     {
 
 
+
         if (weaponSelected)
         {
             lastSelectedGun = selectedGun;
@@ -109,8 +118,10 @@ public class MysteryBox : Interactable
             weaponAnimation.Stop();
 
         }
-        else if (mysteryBoxOpen != true)
+        else if (mysteryBoxOpen != true && playerStats.CanBePurchased(price))
         {
+            playerStats.DiscountBalance(price);
+            uiAnim.DiscountScore(price.ToString());
             mysteryBoxOpen = true;
             MysteryBoxLight.SetActive(true);
             Debug.Log("Mystery Box Open");

@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useEvents: 1
-  promptMessage: Press [E] to Buy Stamin-Up
+  promptMessage: Press [E] to Buy Stamin-Up $2000
   perksPivot: {fileID: 0}
   perkSound: {fileID: 8300000, guid: 3105064277ad2984e8ffb9e89bdf7a23, type: 3}
   cantBuySound: {fileID: 8300000, guid: ef151ee011740834e80f68efb5481da8, type: 3}

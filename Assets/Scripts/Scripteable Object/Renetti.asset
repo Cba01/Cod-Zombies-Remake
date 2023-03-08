@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Renetti
   model: {fileID: 0}
   controller: {fileID: 0}
-  damage: 20
+  damage: 25
   timeBetweenShooting: 0.1
   spread: 0.01
   range: 100

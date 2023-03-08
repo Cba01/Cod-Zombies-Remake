@@ -15,7 +15,7 @@ MonoBehaviour:
   name: UZI
   model: {fileID: 0}
   controller: {fileID: 0}
-  damage: 10
+  damage: 15
   timeBetweenShooting: 0.07
   spread: 0.01
   range: 100

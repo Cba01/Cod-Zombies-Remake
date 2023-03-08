@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Deagle
   model: {fileID: 0}
   controller: {fileID: 22100000, guid: f96d78bf498c5d647a4d5250b96199c9, type: 2}
-  damage: 10
+  damage: 20
   timeBetweenShooting: 0.1
   spread: 0.01
   range: 100

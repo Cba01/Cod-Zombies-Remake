@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Famas
   model: {fileID: 0}
   controller: {fileID: 0}
-  damage: 30
+  damage: 35
   timeBetweenShooting: 0.1
   spread: 0.01
   range: 100

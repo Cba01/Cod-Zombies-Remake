@@ -15,7 +15,7 @@ MonoBehaviour:
   name: M4A1
   model: {fileID: 0}
   controller: {fileID: 0}
-  damage: 30
+  damage: 45
   timeBetweenShooting: 0.1
   spread: 0.01
   range: 100
@@ -24,8 +24,8 @@ MonoBehaviour:
   allowButtonHold: 1
   initialAmmo: 360
   ammo: 360
-  ammoNeeded: 0
-  bulletsLeft: 0
+  ammoNeeded: 19
+  bulletsLeft: 11
   bulletsShot: 0
   magazineSize: 30
   magazineAmount: 10

@@ -167,7 +167,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   overrideAnim: {fileID: 22100000, guid: f96d78bf498c5d647a4d5250b96199c9, type: 2}
-  bulletHoleGround: {fileID: 707084998190155162, guid: 571c4f714a78cf342b437723d31e0bf3, type: 3}
+  bulletHoleGround: {fileID: 1000012142692022, guid: a475880e7da0e9548aa05cb7933752cd, type: 3}
   bulletHoleEnemy: {fileID: 707084998190155162, guid: 571c4f714a78cf342b437723d31e0bf3, type: 3}
   audioSource: {fileID: 2455359478133644798}
   shootSound: {fileID: 8300000, guid: 9ee46adb87c20d447aa70768ee9c49c7, type: 3}
@@ -325,7 +325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2455359478429643030}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.429, y: 0.08, z: 0}
+  m_LocalPosition: {x: 1.376, y: 0.252, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

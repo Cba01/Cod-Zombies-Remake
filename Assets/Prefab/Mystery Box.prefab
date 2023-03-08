@@ -5208,7 +5208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useEvents: 0
-  promptMessage: Press [E] to buy a Gun
+  promptMessage: Press [E] to buy a Gun $900
+  price: 900
   mysteryBox: {fileID: 1984236483116368246}
   mysteryBoxOpen: 0
   guns:

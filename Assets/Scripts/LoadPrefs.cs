@@ -32,7 +32,11 @@ public class LoadPrefs : MonoBehaviour
         {
             if (PlayerPrefs.HasKey("masterVolume"))
             {
-                
+                float localVolume = PlayerPrefs.GetFloat("masterVolume");
+
+                volumeTextValue.text = localVolume.ToString("0.0");
+                volumeSlider.value = localVolume;
+                AudioListener.volume = localVolume;
             }
 
             if (PlayerPrefs.HasKey("masterQuality"))

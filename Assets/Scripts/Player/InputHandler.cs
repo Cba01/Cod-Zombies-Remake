@@ -19,6 +19,7 @@ public class InputHandler : MonoBehaviour
     public float moveAmount;
     public float mouseX;
     public float mouseY;
+    public bool debug_Input;
 
 
     [Header("Player Flags")]
@@ -70,6 +71,7 @@ public class InputHandler : MonoBehaviour
         InteractInput();
         GroundedInput();
         PauseInput();
+        DebugInput();
 
         OneShotInput();
         HoldShootInput();
@@ -124,6 +126,10 @@ public class InputHandler : MonoBehaviour
             changingWeapon_Value = weapon.ChangeWeapon.ReadValue<float>();
             
             
+    }
+    private void DebugInput()
+    {
+        onFoot.ToggleDebug.performed += i => debug_Input = true;
     }
 
     private void PauseInput()

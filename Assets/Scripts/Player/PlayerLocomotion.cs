@@ -42,6 +42,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     void Start()
     {
+
         controller = GetComponent<CharacterController>();
         inputHandler = GetComponent<InputHandler>();
         playerUI = GetComponent<PlayerUI>();
@@ -148,9 +149,9 @@ public class PlayerLocomotion : MonoBehaviour
         }
     }
 
-    public void HandlePause()
+    public void HandleInterface()
     {
-        if (inputHandler.pause_Input  && !playerStats.isDead )
+        if (inputHandler.pause_Input && !playerStats.isDead)
         {
             playerUI.PauseGame();
 
@@ -161,10 +162,10 @@ public class PlayerLocomotion : MonoBehaviour
                 audioSource.Pause();
             }
         }
-        else if(!playerStats.isDead)
+        else if (!playerStats.isDead)
         {
             playerUI.ResumeGame();
-            
+
             //Pausar Audios que ya se estan reproduciendo
             AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
             foreach (AudioSource audioSource in audioSources)
@@ -211,7 +212,7 @@ public class PlayerLocomotion : MonoBehaviour
         anim.Play("Pistol_Shoot");
     }
 
-    public void HandleAimAnimation()
+    /* public void HandleAimAnimation()
     {
         if (inputHandler.aim_Input)
         {
@@ -224,6 +225,6 @@ public class PlayerLocomotion : MonoBehaviour
             playerArms.localPosition = Vector3.Lerp(playerArms.localPosition, new Vector3(0, 0, 0), 0.5f);
 
         }
-    }
+    } */
 
 }

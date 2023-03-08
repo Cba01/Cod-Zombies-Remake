@@ -15,14 +15,14 @@ MonoBehaviour:
   name: Ak-47
   model: {fileID: 7197190753931082144, guid: 2b25a269391896042944849efaeee89d, type: 3}
   controller: {fileID: 0}
-  damage: 30
+  damage: 40
   timeBetweenShooting: 0.1
   spread: 0.01
   range: 100
   timeBetweenShots: 0
   bulletsPerTap: 1
   allowButtonHold: 1
-  initialAmmo: 50
+  initialAmmo: 360
   ammo: 0
   ammoNeeded: 0
   bulletsLeft: 20

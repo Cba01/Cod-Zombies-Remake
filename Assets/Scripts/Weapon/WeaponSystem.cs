@@ -17,7 +17,7 @@ public class WeaponSystem : MonoBehaviour
     [Header("References")]
     [SerializeField]
     public GunData gunData;
-   
+
     private Camera fpsCam;
     public Transform attackPoint;
     public RaycastHit rayHit;
@@ -36,7 +36,7 @@ public class WeaponSystem : MonoBehaviour
     public GameObject bulletHoleEnemy;
 
     [Header("Player UI")]
-   private PlayerUI playerUI;
+    private PlayerUI playerUI;
 
     [Header("Audio")]
     public AudioSource audioSource;
@@ -60,7 +60,7 @@ public class WeaponSystem : MonoBehaviour
     }
     private void Start()
     {
-        
+
     }
     private void Update()
     {
@@ -104,14 +104,22 @@ public class WeaponSystem : MonoBehaviour
         if (gunData.readyToShoot && gunData.shooting && !gunData.reloading && gunData.bulletsLeft > 0)
         {
             gunData.bulletsShot = gunData.bulletsPerTap;
+            if (gunData.bulletsPerTap > 1)
+            {
+                audioSource.PlayOneShot(shootSound);
+
+            }
             Shoot();
         }
     }
 
     private void Shoot()
     {
+        if (gunData.bulletsPerTap <= 1)
+        {
+            audioSource.PlayOneShot(shootSound);
 
-        audioSource.PlayOneShot(shootSound);
+        }
         gunData.readyToShoot = false;
         playerLocomotion.canSprint = false;
 
@@ -162,11 +170,11 @@ public class WeaponSystem : MonoBehaviour
         }
 
         //Effects
-        if (rayHit.transform.tag == "Enemy")
+        if (rayHit.collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             Instantiate(bulletHoleEnemy, rayHit.point, Quaternion.LookRotation(rayHit.normal));
         }
-        else
+        else if(rayHit.collider.gameObject.layer != LayerMask.NameToLayer("Enemy"))
         {
             Instantiate(bulletHoleGround, rayHit.point, Quaternion.LookRotation(rayHit.normal));
         }
@@ -174,9 +182,10 @@ public class WeaponSystem : MonoBehaviour
         GameObject muzzleFlashGO = (GameObject)Instantiate(gunData.muzzleFlash, attackPoint.position, transform.rotation);
         muzzleFlashGO.transform.parent = attackPoint;
 
+
         CameraShaker.Instance.ShakeOnce(gunData.camShakeMagnitude, gunData.camShakeRoughness, gunData.camShakeFadeInTime, gunData.camShakeFadeOutTime);
 
-         playerLocomotion.HandleShootAnimation();
+        playerLocomotion.HandleShootAnimation();
 
         gunData.bulletsLeft--;
         gunData.bulletsShot--;
